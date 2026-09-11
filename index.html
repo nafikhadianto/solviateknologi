@@ -285,24 +285,18 @@
     }
 
     .logo-link {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 3px;
-      flex-shrink: 0;
-      text-decoration: none;
-    }
-
-    .logo-top-row {
       display: flex;
       align-items: center;
-      gap: 9px;
+      gap: 12px;
+      flex-shrink: 0;
+      text-decoration: none;
+      white-space: nowrap;
     }
 
     .logo-badge {
-      width: 32px;
-      height: 32px;
-      border-radius: 9px;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
       background: #060B14;
       border: 1.2px solid var(--border-gold);
       display: flex;
@@ -317,12 +311,19 @@
       height: 100%;
     }
 
+    .logo-text-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2px;
+    }
+
     .logo-brand {
-      font-size: 1.22rem;
+      font-size: 1.25rem;
       font-weight: 800;
       color: #FFFFFF;
       letter-spacing: -0.02em;
-      line-height: 1;
+      line-height: 1.1;
       white-space: nowrap;
     }
 
@@ -331,10 +332,10 @@
     }
 
     .logo-tagline {
-      font-size: 0.68rem;
+      font-size: 0.72rem;
       font-weight: 600;
       color: var(--text-muted);
-      letter-spacing: 0.04em;
+      letter-spacing: 0.02em;
       line-height: 1.2;
       white-space: nowrap;
     }
@@ -1582,13 +1583,10 @@
 
     @media (max-width: 768px) {
       .logo-brand {
-        font-size: 1.12rem;
+        font-size: 1.15rem;
       }
       .logo-tagline {
-        font-size: 0.74rem;
-      }
-      .logo-divider {
-        font-size: 0.85rem;
+        font-size: 0.70rem;
       }
       .showcase-grid, .calc-grid {
         grid-template-columns: 1fr;
@@ -1629,20 +1627,14 @@
         gap: 8px;
       }
       .logo-badge {
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
       }
       .logo-brand {
         font-size: 1.05rem;
       }
       .logo-tagline {
-        font-size: 0.68rem;
-      }
-      .logo-divider {
-        font-size: 0.75rem;
-      }
-      .logo-text-wrap {
-        gap: 6px;
+        font-size: 0.65rem;
       }
     }
 
@@ -1651,7 +1643,7 @@
         font-size: 0.98rem;
       }
       .logo-tagline {
-        font-size: 0.62rem;
+        font-size: 0.60rem;
       }
     }
   </style>
@@ -1664,18 +1656,18 @@
   <header class="header" id="header">
     <div class="container nav-container">
       <a href="#beranda" class="logo-link" aria-label="Solvia Web Beranda">
-        <div class="logo-top-row">
-          <div class="logo-badge">
-            <!-- Monogram SW Tech Badging -->
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 15h-5a2 2 0 0 0-2 2v2.5a2 2 0 0 0 2 2h5a2 2 0 0 1 2 2V26a2 2 0 0 1-2 2h-5" stroke="#D6B56D" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M24 15l2.2 13l2.8-8.5l2.8 8.5l2.2-13" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="37" cy="27" r="2.2" fill="#25D366"/>
-            </svg>
-          </div>
-          <span class="logo-brand">Solvia<span>Web</span></span>
+        <div class="logo-badge">
+          <!-- Monogram SW Tech Badging -->
+          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 15h-5a2 2 0 0 0-2 2v2.5a2 2 0 0 0 2 2h5a2 2 0 0 1 2 2V26a2 2 0 0 1-2 2h-5" stroke="#D6B56D" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M24 15l2.2 13l2.8-8.5l2.8 8.5l2.2-13" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="37" cy="27" r="2.2" fill="#25D366"/>
+          </svg>
         </div>
-        <span class="logo-tagline">Jasa Pembuatan Landing Page</span>
+        <div class="logo-text-wrap">
+          <span class="logo-brand">Solvia<span>Web</span></span>
+          <span class="logo-tagline">Jasa Pembuatan Landing Page</span>
+        </div>
       </a>
 
       <!-- Desktop Nav Menu -->
@@ -2659,17 +2651,17 @@
         <!-- Col 1: Brand Info -->
         <div>
           <a href="#beranda" class="logo-link" style="margin-bottom: 16px;">
-            <div class="logo-top-row">
-              <div class="logo-badge">
-                <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 15h-5a2 2 0 0 0-2 2v2.5a2 2 0 0 0 2 2h5a2 2 0 0 1 2 2V26a2 2 0 0 1-2 2h-5" stroke="#D6B56D" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M24 15l2.2 13l2.8-8.5l2.8 8.5l2.2-13" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="37" cy="27" r="2.2" fill="#25D366"/>
-                </svg>
-              </div>
-              <span class="logo-brand">Solvia<span>Web</span></span>
+            <div class="logo-badge">
+              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 15h-5a2 2 0 0 0-2 2v2.5a2 2 0 0 0 2 2h5a2 2 0 0 1 2 2V26a2 2 0 0 1-2 2h-5" stroke="#D6B56D" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M24 15l2.2 13l2.8-8.5l2.8 8.5l2.2-13" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="37" cy="27" r="2.2" fill="#25D366"/>
+              </svg>
             </div>
-            <span class="logo-tagline">Jasa Pembuatan Landing Page</span>
+            <div class="logo-text-wrap">
+              <span class="logo-brand">Solvia<span>Web</span></span>
+              <span class="logo-tagline">Jasa Pembuatan Landing Page</span>
+            </div>
           </a>
           <p class="footer-brand-desc">
             Jasa pembuatan landing page praktis, menarik, dan terjangkau untuk para pemilik usaha, UMKM, toko online, dan bisnis jasa di seluruh Indonesia.
