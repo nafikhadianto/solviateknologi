@@ -7,7 +7,21 @@
   <meta name="description" content="Solvia Web - Jasa Pembuatan Landing Page untuk berbagai jenis usaha dan bisnis. Tampilan menarik, rapi di HP, cepat dibuka, dan langsung terhubung ke WhatsApp. Terima beres siap pakai!">
   <meta name="keywords" content="jasa landing page, jasa pembuatan landing page, buat landing page usaha, bikin landing page umkm, landing page toko online, landing page murah bagus, solvia web">
   <meta name="author" content="Solvia Web">
-  <meta name="theme-color" content="#060B14">
+  <meta name="theme-color" content="#060B14" id="metaThemeColor">
+
+  <!-- Theme Detection Script (Prevents FOUC) -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('solvia_theme');
+      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      const theme = savedTheme ? savedTheme : (prefersLight ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+      const meta = document.getElementById('metaThemeColor');
+      if (meta) {
+        meta.setAttribute('content', theme === 'light' ? '#F8FAFC' : '#060B14');
+      }
+    })();
+  </script>
 
   <!-- Open Graph Metadata -->
   <meta property="og:type" content="website">
@@ -75,6 +89,11 @@
       --border-color: rgba(255, 255, 255, 0.08);
       --border-gold: rgba(214, 181, 109, 0.35);
       
+      --header-bg: rgba(6, 11, 20, 0.9);
+      --header-scrolled-bg: rgba(6, 11, 20, 0.98);
+      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      --card-shadow-hover: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(214, 181, 109, 0.12);
+      
       --radius-sm: 8px;
       --radius-md: 14px;
       --radius-lg: 20px;
@@ -82,6 +101,36 @@
       
       --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ==========================================================================
+       LUXURY LIGHT MODE THEME VARIABLES (HIGH CONTRAST & MAXIMUM READABILITY)
+       ========================================================================== --> */
+    [data-theme="light"] {
+      --bg-dark: #F8FAFC;
+      --bg-darker: #F1F5F9;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #F8FAFC;
+      
+      /* High-Contrast Luxury Bronze-Gold (WCAG AA & AAA compliant on light canvas) */
+      --gold-primary: #85580C;
+      --gold-light: #A06D0B;
+      --gold-dark: #6E4504;
+      --gold-gradient: linear-gradient(135deg, #784E07 0%, #A06D0B 50%, #6E4504 100%);
+      
+      /* Crisp & High-Contrast Typography */
+      --text-white: #0F172A; /* Deep navy obsidian for bold headings & brand titles */
+      --text-main: #1E293B;  /* Slate 800 - crisp, highly legible primary body */
+      --text-muted: #334155; /* Slate 700 - ultra-sharp readable secondary text */
+      --text-dim: #475569;   /* Slate 600 - clear sub-notes & metadata, never faint */
+      
+      --border-color: rgba(15, 23, 42, 0.12);
+      --border-gold: rgba(133, 88, 12, 0.35);
+      
+      --header-bg: rgba(255, 255, 255, 0.94);
+      --header-scrolled-bg: rgba(255, 255, 255, 0.98);
+      --card-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.07), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+      --card-shadow-hover: 0 20px 35px -5px rgba(133, 88, 12, 0.16), 0 8px 10px -4px rgba(15, 23, 42, 0.04);
     }
 
     *, *::before, *::after {
@@ -263,7 +312,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(6, 11, 20, 0.9);
+      background: var(--header-bg);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border-color);
@@ -271,8 +320,8 @@
     }
 
     .header.scrolled {
-      background: rgba(6, 11, 20, 0.98);
-      border-bottom-color: rgba(214, 181, 109, 0.25);
+      background: var(--header-scrolled-bg);
+      border-bottom-color: var(--border-gold);
     }
 
     .nav-container {
@@ -321,7 +370,7 @@
     .logo-brand {
       font-size: 1.25rem;
       font-weight: 800;
-      color: #FFFFFF;
+      color: var(--text-white);
       letter-spacing: -0.02em;
       line-height: 1.1;
       white-space: nowrap;
@@ -370,6 +419,78 @@
       height: 2px;
       background: var(--gold-gradient);
       border-radius: 2px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Aesthetic Theme Toggle Switch */
+    .theme-toggle-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(214, 181, 109, 0.1);
+      border: 1.2px solid var(--border-gold);
+      color: var(--gold-primary);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: var(--transition);
+      flex-shrink: 0;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .theme-toggle-btn:hover {
+      background: rgba(214, 181, 109, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(214, 181, 109, 0.3);
+    }
+
+    [data-theme="light"] .theme-toggle-btn {
+      background: rgba(184, 134, 11, 0.08);
+      border-color: rgba(184, 134, 11, 0.35);
+      color: var(--gold-primary);
+    }
+
+    [data-theme="light"] .theme-toggle-btn:hover {
+      background: rgba(184, 134, 11, 0.16);
+      box-shadow: 0 4px 15px rgba(184, 134, 11, 0.25);
+    }
+
+    .theme-icon {
+      width: 19px;
+      height: 19px;
+      position: absolute;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+      stroke-width: 2.2;
+    }
+
+    /* Dark Mode Active (default) -> Sun icon visible to switch to light mode */
+    .sun-icon {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+
+    .moon-icon {
+      opacity: 0;
+      transform: rotate(-90deg) scale(0);
+    }
+
+    /* Light Mode Active -> Moon icon visible to switch to dark mode */
+    [data-theme="light"] .sun-icon {
+      opacity: 0;
+      transform: rotate(90deg) scale(0);
+    }
+
+    [data-theme="light"] .moon-icon {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
     }
 
     .nav-cta {
@@ -1552,6 +1673,476 @@
       box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.6);
     }
 
+    .sticky-cta-sub {
+      font-size: 0.74rem;
+      color: var(--gold-primary);
+      font-weight: 700;
+    }
+
+    .sticky-cta-title {
+      font-size: 0.85rem;
+      color: var(--text-white);
+      font-weight: 800;
+    }
+
+    /* ==========================================================================
+       LIGHT THEME COMPONENT OVERRIDES & TRANSITIONS
+       ========================================================================== --> */
+    /* Transition for Smooth Theme Switching */
+    body, .header, .benefit-card, .audience-card, .portfolio-card, 
+    .feature-box, .pricing-card, .step-card, .calc-container, 
+    .calc-radio-card, .calc-check-item, .calc-summary-card, 
+    .faq-item, .cta-banner, .footer, .mobile-drawer, .logo-badge {
+      transition: background-color 0.3s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .logo-s {
+      stroke: #D6B56D;
+      transition: stroke 0.3s ease;
+    }
+
+    .logo-w {
+      stroke: #FFFFFF;
+      transition: stroke 0.3s ease;
+    }
+
+    /* 1. Header & Navigation Legibility */
+    [data-theme="light"] .logo-badge {
+      background: #FFFFFF;
+      border-color: rgba(133, 88, 12, 0.3);
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+    }
+
+    [data-theme="light"] .logo-s {
+      stroke: #85580C;
+    }
+
+    [data-theme="light"] .logo-w {
+      stroke: #0F172A;
+    }
+
+    [data-theme="light"] .logo-tagline {
+      color: #334155;
+      font-weight: 700;
+    }
+
+    [data-theme="light"] .nav-link {
+      color: #334155;
+      font-weight: 600;
+    }
+
+    [data-theme="light"] .nav-link:hover,
+    [data-theme="light"] .nav-link.active {
+      color: #0F172A;
+      font-weight: 700;
+    }
+
+    [data-theme="light"] .nav-link.active::after {
+      background: #85580C;
+    }
+
+    [data-theme="light"] .mobile-menu-btn {
+      border-color: rgba(15, 23, 42, 0.18);
+      color: #0F172A;
+      background: #FFFFFF;
+    }
+
+    /* 2. Hero Section Typography & Contrast */
+    [data-theme="light"] .hero-glow-1 {
+      background: radial-gradient(circle, rgba(133, 88, 12, 0.08) 0%, rgba(248, 250, 252, 0) 70%);
+    }
+
+    [data-theme="light"] .hero-badge {
+      background: rgba(133, 88, 12, 0.08);
+      border-color: rgba(133, 88, 12, 0.3);
+      color: #85580C;
+      font-weight: 700;
+    }
+
+    [data-theme="light"] .hero-guarantee-item {
+      color: #334155;
+      font-weight: 600;
+    }
+
+    [data-theme="light"] .hero-guarantee-item svg {
+      color: #15803D;
+    }
+
+    /* Hero Showcase Box with Crystal-Clear Nested Cards */
+    [data-theme="light"] .hero-showcase-box {
+      background: #FFFFFF;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.07), 0 0 25px rgba(133, 88, 12, 0.08);
+      border-color: rgba(133, 88, 12, 0.3);
+    }
+
+    [data-theme="light"] .showcase-badge {
+      background: rgba(21, 128, 61, 0.1);
+      color: #15803D;
+      border: 1px solid rgba(21, 128, 61, 0.25);
+    }
+
+    [data-theme="light"] .showcase-feature-card {
+      background: #F8FAFC;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+    }
+
+    [data-theme="light"] .showcase-feature-val {
+      color: #85580C;
+      font-weight: 800;
+    }
+
+    [data-theme="light"] .showcase-feature-val.green {
+      color: #15803D;
+    }
+
+    [data-theme="light"] .showcase-feature-text {
+      color: #334155;
+      font-weight: 500;
+    }
+
+    /* 3. Section Badges, Headings & Text Gradients */
+    [data-theme="light"] .section-tag {
+      background: rgba(133, 88, 12, 0.08);
+      border-color: rgba(133, 88, 12, 0.28);
+      color: #85580C;
+      font-weight: 700;
+    }
+
+    [data-theme="light"] .gradient-text {
+      background: linear-gradient(135deg, #784E07 0%, #A06D0B 50%, #6E4504 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+
+    /* 4. Global Cards Elevation */
+    [data-theme="light"] .benefit-card,
+    [data-theme="light"] .audience-card,
+    [data-theme="light"] .portfolio-card,
+    [data-theme="light"] .feature-box,
+    [data-theme="light"] .pricing-card,
+    [data-theme="light"] .step-card,
+    [data-theme="light"] .calc-container {
+      box-shadow: var(--card-shadow);
+    }
+
+    [data-theme="light"] .benefit-card:hover,
+    [data-theme="light"] .audience-card:hover,
+    [data-theme="light"] .portfolio-card:hover,
+    [data-theme="light"] .feature-box:hover,
+    [data-theme="light"] .pricing-card:hover,
+    [data-theme="light"] .step-card:hover {
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    /* 5. Benefits & Audience Section */
+    [data-theme="light"] .benefit-icon {
+      background: rgba(133, 88, 12, 0.08);
+      border-color: rgba(133, 88, 12, 0.25);
+      color: #85580C;
+    }
+
+    [data-theme="light"] .audience-tag {
+      color: #15803D;
+      font-weight: 800;
+    }
+
+    [data-theme="light"] .audience-examples {
+      color: #85580C;
+      font-weight: 700;
+      border-top-color: rgba(15, 23, 42, 0.08);
+    }
+
+    [data-theme="light"] .feature-num {
+      color: #85580C;
+      font-weight: 800;
+    }
+
+    /* 6. Portfolio Cards High Legibility */
+    [data-theme="light"] .portfolio-browser-bar {
+      background: #F1F5F9;
+      border-bottom-color: rgba(15, 23, 42, 0.08);
+    }
+
+    [data-theme="light"] .portfolio-url-badge {
+      background: #FFFFFF;
+      border-color: rgba(15, 23, 42, 0.12);
+      color: #334155;
+      font-weight: 600;
+    }
+
+    [data-theme="light"] .status-live {
+      background: rgba(21, 128, 61, 0.1);
+      color: #15803D;
+      border-color: rgba(21, 128, 61, 0.3);
+    }
+
+    [data-theme="light"] .status-demo {
+      background: rgba(133, 88, 12, 0.1);
+      color: #85580C;
+      border-color: rgba(133, 88, 12, 0.3);
+    }
+
+    [data-theme="light"] .portfolio-category {
+      color: #85580C;
+      font-weight: 800;
+    }
+
+    [data-theme="light"] .portfolio-features {
+      border-top-color: rgba(15, 23, 42, 0.08);
+    }
+
+    [data-theme="light"] .portfolio-feature-tag {
+      background: #F1F5F9;
+      color: #1E293B;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      font-weight: 600;
+    }
+
+    /* 7. Buttons in Light Mode */
+    [data-theme="light"] .btn-outline {
+      background: #FFFFFF;
+      color: #0F172A;
+      border: 1.5px solid rgba(15, 23, 42, 0.18);
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+      font-weight: 700;
+    }
+
+    [data-theme="light"] .btn-outline:hover {
+      border-color: #85580C;
+      color: #85580C;
+      background: rgba(133, 88, 12, 0.06);
+    }
+
+    [data-theme="light"] .portfolio-link-btn:hover {
+      background: linear-gradient(135deg, #85580C 0%, #6E4504 100%);
+      color: #FFFFFF;
+      border-color: transparent;
+    }
+
+    /* 8. Pricing Section Typography */
+    [data-theme="light"] .pricing-card.featured {
+      background: linear-gradient(180deg, rgba(133, 88, 12, 0.05) 0%, #FFFFFF 100%);
+      border: 2px solid #85580C;
+      box-shadow: 0 15px 35px rgba(133, 88, 12, 0.12), 0 4px 10px rgba(15, 23, 42, 0.04);
+    }
+
+    [data-theme="light"] .pricing-badge-popular {
+      background: linear-gradient(135deg, #85580C 0%, #A06D0B 100%);
+      color: #FFFFFF;
+      font-weight: 800;
+      box-shadow: 0 4px 15px rgba(133, 88, 12, 0.3);
+    }
+
+    [data-theme="light"] .pricing-price.gold {
+      color: #85580C;
+    }
+
+    [data-theme="light"] .pricing-note {
+      color: #475569;
+      font-weight: 600;
+    }
+
+    [data-theme="light"] .pricing-feature-item svg {
+      color: #15803D;
+    }
+
+    /* 9. Calculator & Interactive Elements */
+    [data-theme="light"] .calc-radio-card {
+      background: #F8FAFC;
+      border-color: rgba(15, 23, 42, 0.1);
+    }
+
+    [data-theme="light"] .calc-radio-card:hover {
+      border-color: #85580C;
+    }
+
+    [data-theme="light"] .calc-radio-card.active {
+      background: rgba(133, 88, 12, 0.08);
+      border-color: #85580C;
+    }
+
+    [data-theme="light"] .calc-opt-name {
+      color: #0F172A;
+      font-weight: 700;
+    }
+
+    [data-theme="light"] .calc-radio-card.active .calc-opt-name {
+      color: #85580C;
+    }
+
+    [data-theme="light"] .calc-opt-desc {
+      color: #334155;
+    }
+
+    [data-theme="light"] .calc-check-item {
+      background: #F8FAFC;
+      border-color: rgba(15, 23, 42, 0.1);
+    }
+
+    [data-theme="light"] .calc-check-item:hover {
+      border-color: rgba(15, 23, 42, 0.25);
+    }
+
+    [data-theme="light"] .calc-check-item.active {
+      background: rgba(21, 128, 61, 0.08);
+      border-color: #15803D;
+    }
+
+    [data-theme="light"] .calc-check-label {
+      color: #0F172A;
+      font-weight: 600;
+    }
+
+    [data-theme="light"] .calc-check-price {
+      color: #85580C;
+      font-weight: 700;
+    }
+
+    [data-theme="light"] .calc-check-custom {
+      background: #FFFFFF;
+      border-color: rgba(15, 23, 42, 0.25);
+    }
+
+    [data-theme="light"] .calc-check-item.active .calc-check-custom {
+      background: #15803D;
+      border-color: #15803D;
+    }
+
+    [data-theme="light"] .calc-summary-card {
+      background: #FFFFFF;
+      border-color: rgba(15, 23, 42, 0.1);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+    }
+
+    [data-theme="light"] .calc-summary-title {
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .calc-summary-sub {
+      color: #475569;
+    }
+
+    [data-theme="light"] .calc-itemized-row {
+      color: #334155;
+    }
+
+    [data-theme="light"] .calc-itemized-row strong {
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .calc-total-box {
+      background: rgba(133, 88, 12, 0.06);
+      border-color: rgba(133, 88, 12, 0.25);
+    }
+
+    [data-theme="light"] .calc-total-label {
+      color: #85580C;
+      font-weight: 800;
+    }
+
+    [data-theme="light"] .calc-total-amount {
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .calc-time-est {
+      color: #15803D;
+      font-weight: 700;
+    }
+
+    /* 10. Steps & FAQ */
+    [data-theme="light"] .step-num-badge {
+      background: rgba(133, 88, 12, 0.08);
+      border-color: rgba(133, 88, 12, 0.3);
+      color: #85580C;
+    }
+
+    [data-theme="light"] .faq-question {
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .faq-icon {
+      color: #85580C;
+    }
+
+    [data-theme="light"] .faq-answer {
+      background: #F8FAFC;
+      color: #334155;
+      border-top: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    /* 11. CTA Banner, Mobile Drawer & Footer */
+    [data-theme="light"] .cta-banner {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+      border: 1.5px solid rgba(133, 88, 12, 0.3);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+    }
+
+    [data-theme="light"] .mobile-drawer {
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom-color: rgba(15, 23, 42, 0.1);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+    }
+
+    [data-theme="light"] .mobile-nav-link {
+      color: #1E293B;
+      border-bottom-color: rgba(15, 23, 42, 0.08);
+    }
+
+    [data-theme="light"] .mobile-nav-link:hover {
+      color: #85580C;
+    }
+
+    [data-theme="light"] .footer {
+      background: #F1F5F9;
+      border-top: 1px solid rgba(15, 23, 42, 0.1);
+    }
+
+    [data-theme="light"] .footer-brand-desc {
+      color: #334155;
+    }
+
+    [data-theme="light"] .footer-col-title {
+      color: #0F172A;
+      font-weight: 800;
+    }
+
+    [data-theme="light"] .footer-link {
+      color: #334155;
+    }
+
+    [data-theme="light"] .footer-link:hover {
+      color: #85580C;
+    }
+
+    [data-theme="light"] .footer-contact-item {
+      color: #334155;
+    }
+
+    [data-theme="light"] .footer-contact-item svg {
+      color: #85580C;
+    }
+
+    [data-theme="light"] .footer-bottom {
+      color: #475569;
+      border-top-color: rgba(15, 23, 42, 0.1);
+    }
+
+    [data-theme="light"] .sticky-mobile-cta {
+      background: rgba(255, 255, 255, 0.96);
+      border-top-color: rgba(15, 23, 42, 0.1);
+      box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.08);
+    }
+
+    [data-theme="light"] .sticky-cta-sub {
+      color: #85580C;
+    }
+
+    [data-theme="light"] .sticky-cta-title {
+      color: #0F172A;
+    }
+
     /* ==========================================================================
        RESPONSIVE BREAKPOINTS
        ========================================================================== --> */
@@ -1659,8 +2250,8 @@
         <div class="logo-badge">
           <!-- Monogram SW Tech Badging -->
           <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 15h-5a2 2 0 0 0-2 2v2.5a2 2 0 0 0 2 2h5a2 2 0 0 1 2 2V26a2 2 0 0 1-2 2h-5" stroke="#D6B56D" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M24 15l2.2 13l2.8-8.5l2.8 8.5l2.2-13" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="logo-s" d="M20 15h-5a2 2 0 0 0-2 2v2.5a2 2 0 0 0 2 2h5a2 2 0 0 1 2 2V26a2 2 0 0 1-2 2h-5" stroke="#D6B56D" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="logo-w" d="M24 15l2.2 13l2.8-8.5l2.8 8.5l2.2-13" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             <circle cx="37" cy="27" r="2.2" fill="#25D366"/>
           </svg>
         </div>
@@ -1682,22 +2273,43 @@
         <li><a href="#faq" class="nav-link">FAQ</a></li>
       </ul>
 
-      <!-- Nav CTA -->
-      <div class="nav-cta">
-        <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20ingin%20konsultasi%20pembuatan%20landing%20page%20untuk%20usaha%20saya." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-nav-cta">
-          <span class="pulse-dot"></span>
-          <span>Konsultasi WhatsApp</span>
-        </a>
-      </div>
+      <!-- Nav Actions (Theme Switch Toggle, WhatsApp CTA & Mobile Menu) -->
+      <div class="nav-actions">
+        <!-- Aesthetic Theme Switch Toggle Button -->
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Ganti Tema Terang/Gelap" title="Ganti Tema Terang / Gelap">
+          <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4.5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
 
-      <!-- Mobile Hamburger Button -->
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Buka Menu Navigasi">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
+        <!-- Nav CTA -->
+        <div class="nav-cta">
+          <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20ingin%20konsultasi%20pembuatan%20landing%20page%20untuk%20usaha%20saya." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-nav-cta">
+            <span class="pulse-dot"></span>
+            <span>Konsultasi WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Buka Menu Navigasi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
     </div>
 
     <!-- Mobile Drawer -->
@@ -1712,6 +2324,28 @@
         <li><a href="#estimasi" class="mobile-nav-link">Estimasi Biaya</a></li>
         <li><a href="#faq" class="mobile-nav-link">Tanya Jawab (FAQ)</a></li>
       </ul>
+
+      <!-- Mobile Theme Toggle Item -->
+      <div style="padding: 14px 4px; border-top: 1px solid var(--border-color); margin-top: 14px; margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between;">
+        <span style="font-size: 0.92rem; font-weight: 600; color: var(--text-white);">Mode Tampilan</span>
+        <button class="theme-toggle-btn" id="themeToggleBtnMobile" aria-label="Ganti Tema Terang/Gelap" title="Ganti Tema Terang / Gelap">
+          <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4.5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+
       <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20ingin%20konsultasi%20pembuatan%20landing%20page%20untuk%20usaha%20saya." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%;">
         <span class="pulse-dot"></span>
         <span>Chat WhatsApp (0811-1011-071)</span>
@@ -2653,8 +3287,8 @@
           <a href="#beranda" class="logo-link" style="margin-bottom: 16px;">
             <div class="logo-badge">
               <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 15h-5a2 2 0 0 0-2 2v2.5a2 2 0 0 0 2 2h5a2 2 0 0 1 2 2V26a2 2 0 0 1-2 2h-5" stroke="#D6B56D" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M24 15l2.2 13l2.8-8.5l2.8 8.5l2.2-13" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path class="logo-s" d="M20 15h-5a2 2 0 0 0-2 2v2.5a2 2 0 0 0 2 2h5a2 2 0 0 1 2 2V26a2 2 0 0 1-2 2h-5" stroke="#D6B56D" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path class="logo-w" d="M24 15l2.2 13l2.8-8.5l2.8 8.5l2.2-13" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <circle cx="37" cy="27" r="2.2" fill="#25D366"/>
               </svg>
             </div>
@@ -2757,8 +3391,8 @@
   <!-- Sticky Mobile Conversion Bar -->
   <div class="sticky-mobile-cta">
     <div>
-      <div style="font-size: 0.74rem; color: var(--gold-primary); font-weight: 700;">Ingin Dibuatkan Landing Page?</div>
-      <div style="font-size: 0.85rem; color: #FFFFFF; font-weight: 800;">Konsultasi Gratis via WA</div>
+      <div class="sticky-cta-sub">Ingin Dibuatkan Landing Page?</div>
+      <div class="sticky-cta-title">Konsultasi Gratis via WA</div>
     </div>
     <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20ingin%20konsultasi%20pembuatan%20landing%20page%20untuk%20usaha%20saya." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 9px 16px; font-size: 0.84rem;">
       Chat WhatsApp
@@ -2953,6 +3587,36 @@
           updateCalculator();
         });
       });
+
+      // 7. Theme Toggle Logic (Light / Dark Mode)
+      const themeToggleBtn = document.getElementById('themeToggleBtn');
+      const themeToggleBtnMobile = document.getElementById('themeToggleBtnMobile');
+      const metaThemeColor = document.getElementById('metaThemeColor');
+
+      function updateThemeColor(theme) {
+        if (metaThemeColor) {
+          metaThemeColor.setAttribute('content', theme === 'light' ? '#F8FAFC' : '#060B14');
+        }
+      }
+
+      function switchTheme(newTheme) {
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('solvia_theme', newTheme);
+        updateThemeColor(newTheme);
+      }
+
+      function handleThemeToggle() {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        switchTheme(newTheme);
+      }
+
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', handleThemeToggle);
+      }
+      if (themeToggleBtnMobile) {
+        themeToggleBtnMobile.addEventListener('click', handleThemeToggle);
+      }
 
       // Initial Run
       updateCalculator();
