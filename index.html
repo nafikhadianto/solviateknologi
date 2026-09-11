@@ -1,0 +1,3010 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solvia Teknologi | Jasa Pembuatan Website &amp; IT Solution</title>
+  <meta name="description" content="Jasa pembuatan website dan IT Solution untuk usaha maupun pribadi dari Solvia Teknologi. Layanan website lintas wilayah, IT support remote, serta kunjungan sesuai kesepakatan.">
+  
+  <!-- Open Graph Metadata -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Solvia Teknologi | Jasa Pembuatan Website &amp; IT Solution">
+  <meta property="og:description" content="Jasa pembuatan website dan IT Solution untuk usaha maupun pribadi dari Solvia Teknologi. Layanan website lintas wilayah, IT support remote, serta kunjungan sesuai kesepakatan.">
+  <meta property="og:site_name" content="Solvia Teknologi">
+
+  <!-- Favicon Monogram ST (SVG Data URI) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='10' fill='%230B1220'/%3E%3Cpath d='M29 14H15a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H14' stroke='%23D6B56D' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpath d='M22 14v16' stroke='%23FFFFFF' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='31' cy='30' r='2.2' fill='%2325D366'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       CSS VARIABLES & THEME SETUP
+       ========================================================================== */
+    :root {
+      --color-navy: #0B1220;
+      --color-navy-surface: #10192C;
+      --color-navy-surface-alt: #16243D;
+      --color-navy-border: rgba(214, 181, 109, 0.22);
+      
+      --color-gold: #D6B56D;
+      --color-gold-hover: #E4C882;
+      --color-gold-tint: rgba(214, 181, 109, 0.12);
+      --color-gold-glow: rgba(214, 181, 109, 0.28);
+      
+      --color-light-bg: #F8FAFC;
+      --color-card-light: #FFFFFF;
+      --color-border-light: #E2E8F0;
+      
+      --color-text-dark: #0F172A;
+      --color-text-secondary: #64748B;
+      --color-text-light: #F8FAFC;
+      --color-text-muted: #94A3B8;
+
+      --color-whatsapp: #25D366;
+      --color-whatsapp-hover: #20BA5A;
+      --color-whatsapp-dark: #128C7E;
+
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --container-width: 1200px;
+      --nav-height: 80px;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      
+      --shadow-sm: 0 2px 8px rgba(11, 18, 32, 0.04);
+      --shadow-md: 0 10px 30px rgba(11, 18, 32, 0.07);
+      --shadow-lg: 0 20px 45px rgba(11, 18, 32, 0.12);
+      --shadow-gold: 0 10px 30px rgba(214, 181, 109, 0.25);
+      --shadow-dark: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+      
+      --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ==========================================================================
+       RESET & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-height) + 16px);
+      text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text-dark);
+      background-color: var(--color-light-bg);
+      line-height: 1.6;
+      font-size: 16px;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding-bottom: 24px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-bottom: 76px; /* Safe padding for floating WA button */
+      }
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      transition: var(--transition);
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    /* Accessibility Focus States */
+    :focus-visible {
+      outline: 2px solid var(--color-gold);
+      outline-offset: 3px;
+    }
+
+    /* Container Utility */
+    .container {
+      width: 100%;
+      max-width: var(--container-width);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    /* Section Spacing */
+    .section {
+      padding: 96px 0;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 64px 0;
+      }
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 56px auto;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background-color: var(--color-gold-tint);
+      color: #926E24;
+      border: 1px solid rgba(214, 181, 109, 0.35);
+      border-radius: 999px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-header.dark .section-tag {
+      background-color: rgba(214, 181, 109, 0.15);
+      color: var(--color-gold);
+      border-color: var(--color-navy-border);
+    }
+
+    .section-title {
+      font-size: clamp(1.85rem, 3.5vw, 2.65rem);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: var(--color-navy);
+      margin-bottom: 18px;
+    }
+
+    .section-header.dark .section-title {
+      color: #FFFFFF;
+    }
+
+    .section-desc {
+      font-size: 1.0625rem;
+      color: var(--color-text-secondary);
+      line-height: 1.65;
+    }
+
+    .section-header.dark .section-desc {
+      color: var(--color-text-muted);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 26px;
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .btn-wa {
+      background-color: var(--color-whatsapp);
+      color: #FFFFFF;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-wa:hover {
+      background-color: var(--color-whatsapp-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--color-gold) 0%, #C4A257 100%);
+      color: var(--color-navy);
+      font-weight: 800;
+      box-shadow: var(--shadow-gold);
+    }
+
+    .btn-gold:hover {
+      background: linear-gradient(135deg, var(--color-gold-hover) 0%, var(--color-gold) 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(214, 181, 109, 0.4);
+    }
+
+    .btn-outline-gold {
+      background: transparent;
+      color: var(--color-gold);
+      border: 1.5px solid var(--color-gold);
+    }
+
+    .btn-outline-gold:hover {
+      background: var(--color-gold-tint);
+      color: #FFFFFF;
+      border-color: var(--color-gold-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-dark {
+      background: #FFFFFF;
+      color: var(--color-navy);
+      border: 1.5px solid #CBD5E1;
+    }
+
+    .btn-outline-dark:hover {
+      background: #F1F5F9;
+      border-color: var(--color-navy);
+      transform: translateY(-2px);
+    }
+
+    .btn-sm {
+      padding: 9px 18px;
+      font-size: 0.875rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ==========================================================================
+       NAVBAR
+       ========================================================================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--nav-height);
+      background-color: rgba(11, 18, 32, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(214, 181, 109, 0.16);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .navbar-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    /* Brand Logo & Monogram ST */
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .monogram-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 11px;
+      background: linear-gradient(135deg, #16243D 0%, #0B1220 100%);
+      border: 1.5px solid var(--color-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(214, 181, 109, 0.25);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+
+    .brand-subtitle {
+      font-size: 0.75rem;
+      color: var(--color-gold);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Desktop Navigation */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-link {
+      font-size: 0.925rem;
+      font-weight: 600;
+      color: #CBD5E1;
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-gold);
+      transition: width 0.25s ease;
+    }
+
+    .nav-link:hover {
+      color: #FFFFFF;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+    }
+
+    /* Mobile Hamburger */
+    .hamburger-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .hamburger-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 991px) {
+      .hamburger-btn {
+        display: inline-flex;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background-color: rgba(11, 18, 32, 0.98);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 24px;
+        border-bottom: 1px solid rgba(214, 181, 109, 0.2);
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transition: all 0.35s ease;
+      }
+
+      .nav-menu.is-active {
+        max-height: 480px;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      }
+
+      .nav-menu li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .nav-link {
+        display: block;
+        padding: 14px 0;
+        font-size: 1.05rem;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-menu .mobile-cta-item {
+        display: block;
+        padding-top: 18px;
+        border-bottom: none;
+      }
+
+      .nav-menu .mobile-cta-item .btn {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .mobile-cta-item {
+        display: none;
+      }
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      background-color: var(--color-navy);
+      color: #FFFFFF;
+      position: relative;
+      padding: 80px 0 100px 0;
+      overflow: hidden;
+    }
+
+    /* Background Ambient Tech Glow */
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: -160px;
+      right: -80px;
+      width: 580px;
+      height: 580px;
+      background: radial-gradient(circle, rgba(214, 181, 109, 0.16) 0%, rgba(11, 18, 32, 0) 70%);
+      pointer-events: none;
+    }
+
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      bottom: -160px;
+      left: -80px;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(37, 211, 102, 0.09) 0%, rgba(11, 18, 32, 0) 70%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 991px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+
+    .hero-content {
+      max-width: 620px;
+    }
+
+    .hero-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(214, 181, 109, 0.12);
+      border: 1px solid var(--color-navy-border);
+      border-radius: 999px;
+      color: var(--color-gold);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .hero-label svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: rgba(37, 211, 102, 0.12);
+      border: 1px solid rgba(37, 211, 102, 0.25);
+      border-radius: 999px;
+      color: #86EFAC;
+      font-size: 0.775rem;
+      font-weight: 600;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--color-whatsapp);
+      box-shadow: 0 0 8px rgba(37, 211, 102, 0.8);
+      animation: pulseDot 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 4vw, 3.25rem);
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+    }
+
+    .hero-title .text-gold {
+      color: var(--color-gold);
+      background: linear-gradient(135deg, #FFE7B3 0%, var(--color-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.125rem;
+      color: #CBD5E1;
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .hero-points {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 24px;
+    }
+
+    .point-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: #E2E8F0;
+    }
+
+    .point-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(214, 181, 109, 0.18);
+      color: var(--color-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .point-icon svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .hero-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    .hero-notice svg {
+      width: 18px;
+      height: 18px;
+      color: var(--color-gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Hero Mockup Visual */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mockup-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+    }
+
+    /* Laptop Frame */
+    .laptop-mockup {
+      width: 100%;
+      background: #1E293B;
+      border-radius: 16px 16px 4px 4px;
+      padding: 12px 12px 0 12px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+
+    .laptop-camera {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #475569;
+      margin: 0 auto 8px auto;
+    }
+
+    .laptop-screen {
+      background: #0B1220;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid #334155;
+      aspect-ratio: 16 / 10;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .screen-browser-bar {
+      height: 24px;
+      background: #111B2E;
+      border-bottom: 1px solid #1E293B;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      gap: 6px;
+    }
+
+    .browser-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #EF4444; }
+    .dot-yellow { background: #F59E0B; }
+    .dot-green { background: #10B981; }
+
+    .browser-url {
+      height: 14px;
+      background: #1E293B;
+      border-radius: 3px;
+      flex: 1;
+      max-width: 200px;
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      padding: 0 6px;
+      font-size: 8px;
+      color: #94A3B8;
+      font-family: monospace;
+    }
+
+    .screen-content {
+      flex: 1;
+      padding: 12px;
+      background: linear-gradient(180deg, #0B1220 0%, #111A2E 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+    }
+
+    /* Inner Mockup UI */
+    .mockup-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .mockup-logo {
+      height: 10px;
+      width: 48px;
+      background: var(--color-gold);
+      border-radius: 2px;
+    }
+    .mockup-links {
+      display: flex;
+      gap: 6px;
+    }
+    .mockup-link {
+      height: 6px;
+      width: 24px;
+      background: #475569;
+      border-radius: 2px;
+    }
+
+    .mockup-hero-box {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 10px;
+      align-items: center;
+      margin-top: 4px;
+    }
+    .mockup-title-bar {
+      height: 12px;
+      width: 85%;
+      background: #FFFFFF;
+      border-radius: 3px;
+      margin-bottom: 6px;
+    }
+    .mockup-sub-bar {
+      height: 7px;
+      width: 95%;
+      background: #64748B;
+      border-radius: 2px;
+      margin-bottom: 4px;
+    }
+    .mockup-sub-bar-2 {
+      height: 7px;
+      width: 65%;
+      background: #64748B;
+      border-radius: 2px;
+      margin-bottom: 10px;
+    }
+    .mockup-btn {
+      height: 14px;
+      width: 60px;
+      background: var(--color-whatsapp);
+      border-radius: 3px;
+    }
+
+    .mockup-grid-box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .mockup-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      padding: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .mockup-card-icon {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      background: var(--color-gold-tint);
+    }
+    .mockup-card-line {
+      height: 5px;
+      background: #94A3B8;
+      border-radius: 2px;
+      width: 75%;
+    }
+
+    .laptop-base {
+      height: 14px;
+      background: #334155;
+      border-radius: 0 0 16px 16px;
+      position: relative;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .laptop-base::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 5px;
+      background: #1E293B;
+      border-radius: 0 0 4px 4px;
+    }
+
+    /* Companion Phone Mockup */
+    .phone-mockup {
+      position: absolute;
+      bottom: -15px;
+      right: -18px;
+      width: 140px;
+      height: 240px;
+      background: #1E293B;
+      border-radius: 22px;
+      padding: 6px;
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.15);
+      z-index: 10;
+    }
+
+    @media (max-width: 480px) {
+      .phone-mockup {
+        width: 110px;
+        height: 200px;
+        right: -8px;
+        bottom: -10px;
+      }
+    }
+
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: #0B1220;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #334155;
+      display: flex;
+      flex-direction: column;
+      padding: 8px 6px;
+      gap: 6px;
+    }
+
+    .phone-notch {
+      width: 32px;
+      height: 4px;
+      background: #334155;
+      border-radius: 3px;
+      margin: 0 auto 4px auto;
+    }
+
+    .phone-hero-bar {
+      height: 10px;
+      width: 80%;
+      background: #FFFFFF;
+      border-radius: 2px;
+    }
+    .phone-sub-bar {
+      height: 5px;
+      width: 90%;
+      background: #64748B;
+      border-radius: 2px;
+    }
+    .phone-btn {
+      height: 12px;
+      width: 100%;
+      background: var(--color-whatsapp);
+      border-radius: 3px;
+      margin-top: 4px;
+    }
+    .phone-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+      padding: 4px;
+      margin-top: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    /* Floating Tech Element Badge */
+    .hero-tech-badge {
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      background: rgba(17, 27, 46, 0.95);
+      border: 1px solid var(--color-gold);
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .hero-tech-badge .badge-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: var(--color-gold-tint);
+      color: var(--color-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-tech-badge .badge-text {
+      font-size: 0.785rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+
+    .hero-tech-badge .badge-text span {
+      display: block;
+      font-size: 0.7rem;
+      color: var(--color-gold);
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       SERVICES SECTION
+       ========================================================================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 1100px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .service-card {
+      background: var(--color-card-light);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      padding: 30px 24px;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: #CBD5E1;
+    }
+
+    /* Highlighted Main Service Card */
+    .service-card.highlighted {
+      background: #FFFFFF;
+      border: 2px solid var(--color-gold);
+      box-shadow: 0 15px 35px rgba(214, 181, 109, 0.18);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: linear-gradient(135deg, var(--color-gold) 0%, #C4A257 100%);
+      color: var(--color-navy);
+      font-size: 0.725rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(214, 181, 109, 0.35);
+    }
+
+    .service-category-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #926E24;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .service-icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      background: rgba(11, 18, 32, 0.04);
+      color: var(--color-navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      transition: var(--transition);
+      border: 1px solid rgba(11, 18, 32, 0.08);
+    }
+
+    .service-card.highlighted .service-icon-box {
+      background: var(--color-gold-tint);
+      color: #926E24;
+      border-color: rgba(214, 181, 109, 0.4);
+    }
+
+    .service-card:hover .service-icon-box {
+      background: var(--color-navy);
+      color: var(--color-gold);
+      transform: scale(1.05);
+    }
+
+    .service-icon-box svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--color-navy);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .service-desc {
+      font-size: 0.925rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .service-features {
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .service-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: var(--color-text-dark);
+      font-weight: 500;
+    }
+
+    .service-feature-item svg {
+      width: 16px;
+      height: 16px;
+      color: #10B981;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .service-card .btn {
+      width: 100%;
+      padding: 11px 16px;
+      font-size: 0.875rem;
+    }
+
+    /* Disclaimer / Location Note under services */
+    .services-disclaimer {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-left: 4px solid var(--color-gold);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .disclaimer-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-gold-tint);
+      color: #926E24;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .disclaimer-icon svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .disclaimer-text {
+      font-size: 0.9rem;
+      color: var(--color-text-dark);
+      line-height: 1.55;
+    }
+
+    /* ==========================================================================
+       INTERACTIVE CONSULTATION ENGINE (HIGH-CONVERSION FEATURE)
+       ========================================================================== */
+    .consultation-box {
+      margin-top: 48px;
+      background: linear-gradient(135deg, #10192C 0%, #0B1220 100%);
+      border: 1px solid var(--color-navy-border);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      color: #FFFFFF;
+      box-shadow: var(--shadow-dark);
+    }
+
+    @media (max-width: 768px) {
+      .consultation-box {
+        padding: 24px 20px;
+      }
+    }
+
+    .consultation-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 32px auto;
+    }
+
+    .consultation-title {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+    }
+
+    .consultation-subtitle {
+      font-size: 0.95rem;
+      color: #CBD5E1;
+    }
+
+    .selector-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .selector-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .selector-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .chip-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #E2E8F0;
+      padding: 9px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .chip-btn:hover {
+      background: rgba(214, 181, 109, 0.15);
+      border-color: var(--color-gold);
+      color: #FFFFFF;
+    }
+
+    .chip-btn.active {
+      background: linear-gradient(135deg, var(--color-gold) 0%, #C4A257 100%);
+      color: var(--color-navy);
+      border-color: var(--color-gold);
+      font-weight: 800;
+      box-shadow: 0 4px 14px rgba(214, 181, 109, 0.35);
+    }
+
+    .preview-chat-card {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .preview-chat-text {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .preview-chat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-gold);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .preview-chat-quote {
+      font-size: 0.95rem;
+      color: #F1F5F9;
+      font-style: italic;
+    }
+
+    /* ==========================================================================
+       WHY CHOOSE US SECTION
+       ========================================================================== */
+    .why-us-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 991px) {
+      .why-us-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 580px) {
+      .why-us-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .why-card {
+      background: var(--color-card-light);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .why-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-gold);
+    }
+
+    .why-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: var(--color-gold-tint);
+      color: #926E24;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .why-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .why-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--color-navy);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .why-desc {
+      font-size: 0.925rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Company Profile Box */
+    .profile-card {
+      max-width: 900px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, var(--color-navy) 0%, #16243D 100%);
+      border: 1px solid var(--color-navy-border);
+      border-radius: var(--radius-xl);
+      padding: 36px 40px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    @media (max-width: 768px) {
+      .profile-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 24px;
+        gap: 20px;
+      }
+    }
+
+    .profile-symbol {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-lg);
+      background: rgba(214, 181, 109, 0.15);
+      border: 1.5px solid var(--color-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--color-gold);
+    }
+
+    .profile-symbol svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .profile-text {
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: #E2E8F0;
+    }
+
+    .profile-text strong {
+      color: var(--color-gold);
+      font-weight: 700;
+    }
+
+    /* ==========================================================================
+       HOW TO ORDER / PROCESS SECTION
+       ========================================================================== */
+    .steps-wrapper {
+      position: relative;
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      position: relative;
+    }
+
+    @media (max-width: 991px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    .step-card {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      padding: 28px 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-navy);
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--color-navy);
+      color: var(--color-gold);
+      font-size: 1.125rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 10px rgba(11, 18, 32, 0.15);
+      border: 1px solid var(--color-navy-border);
+    }
+
+    .step-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--color-navy);
+      margin-bottom: 10px;
+    }
+
+    .step-desc {
+      font-size: 0.885rem;
+      color: var(--color-text-secondary);
+      line-height: 1.55;
+    }
+
+    /* ==========================================================================
+       FAQ SECTION (ACCORDION)
+       ========================================================================== */
+    .faq-wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-item.is-open {
+      border-color: var(--color-gold);
+      box-shadow: var(--shadow-md);
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 20px 24px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-navy);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .faq-question:hover {
+      color: #926E24;
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-light-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.28s ease, background-color 0.28s ease;
+      color: var(--color-navy);
+    }
+
+    .faq-item.is-open .faq-icon {
+      transform: rotate(180deg);
+      background: var(--color-gold-tint);
+      color: #926E24;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+      padding: 0 24px;
+    }
+
+    .faq-item.is-open .faq-answer {
+      max-height: 400px;
+      transition: max-height 0.35s ease-in-out;
+      padding-bottom: 22px;
+    }
+
+    .faq-answer-inner {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      line-height: 1.65;
+      border-top: 1px solid #F1F5F9;
+      padding-top: 14px;
+    }
+
+    /* ==========================================================================
+       CTA & CONTACT SECTION
+       ========================================================================== */
+    .cta-section {
+      background: linear-gradient(135deg, #0B1220 0%, #16243D 100%);
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--color-navy-border);
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(214, 181, 109, 0.12) 0%, rgba(11, 18, 32, 0) 70%);
+      pointer-events: none;
+    }
+
+    .cta-card {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-title {
+      font-size: clamp(2rem, 3.8vw, 2.85rem);
+      font-weight: 800;
+      line-height: 1.22;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+
+    .cta-desc {
+      font-size: 1.1rem;
+      color: #CBD5E1;
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 44px;
+    }
+
+    .cta-actions .btn-wa {
+      padding: 16px 36px;
+      font-size: 1.05rem;
+      border-radius: var(--radius-lg);
+    }
+
+    .cta-info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+
+    @media (max-width: 700px) {
+      .cta-info-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.925rem;
+      color: #E2E8F0;
+    }
+
+    .info-item-icon {
+      width: 22px;
+      height: 22px;
+      color: var(--color-gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .info-item strong {
+      color: #FFFFFF;
+      display: block;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 2px;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      background-color: #060B14;
+      color: #94A3B8;
+      padding: 64px 0 32px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-brand {
+      max-width: 380px;
+    }
+
+    .footer-links-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links-title {
+      color: #FFFFFF;
+      font-size: 0.925rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px 32px;
+    }
+
+    @media (max-width: 600px) {
+      .footer-nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+
+    .footer-link {
+      color: #94A3B8;
+      font-size: 0.925rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--color-gold);
+    }
+
+    .footer-bottom {
+      padding-top: 32px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #64748B;
+    }
+
+    /* ==========================================================================
+       FLOATING WHATSAPP BUTTON
+       ========================================================================== */
+    .floating-wa-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background-color: var(--color-whatsapp);
+      color: #FFFFFF;
+      height: 54px;
+      border-radius: 999px;
+      padding: 0 20px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+      z-index: 990;
+      transition: var(--transition);
+      font-weight: 700;
+      font-size: 0.925rem;
+    }
+
+    .floating-wa-btn:hover {
+      transform: scale(1.05) translateY(-2px);
+      background-color: var(--color-whatsapp-hover);
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.6);
+      color: #FFFFFF;
+    }
+
+    .floating-wa-btn svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .floating-wa-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 52px;
+        height: 52px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 50%;
+      }
+      .floating-wa-btn span {
+        display: none;
+      }
+      .floating-wa-btn svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    /* Accessibility: Prefers reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       NAVBAR
+       ========================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-container">
+      <!-- Monogram ST & Brand Name -->
+      <a href="#beranda" class="brand-logo" aria-label="Solvia Teknologi - Beranda">
+        <div class="monogram-box" aria-hidden="true">
+          <!-- Monogram ST SVG -->
+          <svg width="28" height="28" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M29 14H15a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H14" stroke="#D6B56D" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 14v16" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="31" cy="30" r="2.2" fill="#25D366"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Solvia Teknologi</span>
+          <span class="brand-subtitle">Website &amp; IT Solution</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav aria-label="Navigasi Utama">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#beranda" class="nav-link">Beranda</a></li>
+          <li><a href="#layanan" class="nav-link">Layanan</a></li>
+          <li><a href="#keunggulan" class="nav-link">Keunggulan</a></li>
+          <li><a href="#cara-pemesanan" class="nav-link">Cara Pemesanan</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li class="mobile-cta-item">
+            <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Teknologi%2C%20saya%20ingin%20berkonsultasi%20mengenai%20jasa%20pembuatan%20website%20%2F%20layanan%20IT.%20Mohon%20informasinya." 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn btn-wa">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+              Hubungi Kami
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Desktop Header CTA -->
+      <div class="nav-cta">
+        <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Teknologi%2C%20saya%20ingin%20berkonsultasi%20mengenai%20jasa%20pembuatan%20website%20%2F%20layanan%20IT.%20Mohon%20informasinya." 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn btn-wa btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          Hubungi Kami
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Buka navigasi menu" aria-expanded="false" aria-controls="nav-menu">
+        <svg id="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+    <section class="hero-section" id="beranda">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Left Column: Copy & Actions -->
+          <div class="hero-content">
+            <div class="hero-badge-row">
+              <div class="hero-label">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                WEBSITE &amp; IT SOLUTION
+              </div>
+              <div class="status-pill">
+                <span class="status-dot"></span>
+                <span>Konsultasi Cepat via WhatsApp</span>
+              </div>
+            </div>
+            
+            <h1 class="hero-title">
+              Website Profesional &amp; <span class="text-gold">Solusi IT Terpercaya</span> untuk Bisnis Anda
+            </h1>
+            
+            <p class="hero-desc">
+              Dari pembuatan website hingga dukungan komputer dan jaringan, Solvia Teknologi membantu kebutuhan digital dan IT Anda dengan layanan yang praktis, jelas, dan sesuai kebutuhan.
+            </p>
+
+            <div class="hero-actions">
+              <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Teknologi%2C%20saya%20ingin%20berkonsultasi%20mengenai%20jasa%20pembuatan%20website%20%2F%20layanan%20IT.%20Mohon%20informasinya." 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="btn btn-wa">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+                Konsultasi via WhatsApp
+              </a>
+
+              <a href="#layanan" class="btn btn-outline-gold">
+                Jelajahi Layanan
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Three Value Points -->
+            <div class="hero-points">
+              <div class="point-item">
+                <div class="point-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span>Website nyaman dibuka di HP</span>
+              </div>
+              <div class="point-item">
+                <div class="point-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span>Biaya disepakati sebelum pengerjaan</span>
+              </div>
+              <div class="point-item">
+                <div class="point-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span>Konsultasi online &amp; layanan remote</span>
+              </div>
+            </div>
+
+            <!-- Geographic Notice Snippet -->
+            <div class="hero-notice">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <span>Melayani pembuatan website lintas wilayah. Dukungan remote dan kunjungan disesuaikan dengan kebutuhan.</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Vector Tech Mockup (Laptop & Companion Mobile) -->
+          <div class="hero-visual" aria-hidden="true">
+            <div class="mockup-wrapper">
+              
+              <!-- Floating Tech Feature Tag -->
+              <div class="hero-tech-badge">
+                <div class="badge-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <div class="badge-text">
+                  Desain Modern &amp; Cepat
+                  <span>100% Responsif Multi-Device</span>
+                </div>
+              </div>
+
+              <!-- Laptop Frame -->
+              <div class="laptop-mockup">
+                <div class="laptop-camera"></div>
+                <div class="laptop-screen">
+                  <!-- Browser Bar -->
+                  <div class="screen-browser-bar">
+                    <div class="browser-dot dot-red"></div>
+                    <div class="browser-dot dot-yellow"></div>
+                    <div class="browser-dot dot-green"></div>
+                    <div class="browser-url">solviateknologi.com</div>
+                  </div>
+                  <!-- Inner Screen UI Preview -->
+                  <div class="screen-content">
+                    <div class="mockup-nav">
+                      <div class="mockup-logo"></div>
+                      <div class="mockup-links">
+                        <div class="mockup-link"></div>
+                        <div class="mockup-link"></div>
+                        <div class="mockup-link"></div>
+                      </div>
+                    </div>
+                    <div class="mockup-hero-box">
+                      <div>
+                        <div class="mockup-title-bar"></div>
+                        <div class="mockup-sub-bar"></div>
+                        <div class="mockup-sub-bar-2"></div>
+                        <div class="mockup-btn"></div>
+                      </div>
+                      <div style="background: rgba(214,181,109,0.12); border: 1px solid rgba(214,181,109,0.3); border-radius: 6px; height: 60px; display:flex; align-items:center; justify-content:center;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D6B56D" stroke-width="1.5">
+                          <rect x="3" y="3" width="18" height="18" rx="2"/>
+                          <path d="M3 9h18M9 21V9"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="mockup-grid-box">
+                      <div class="mockup-card">
+                        <div class="mockup-card-icon"></div>
+                        <div class="mockup-card-line"></div>
+                      </div>
+                      <div class="mockup-card">
+                        <div class="mockup-card-icon"></div>
+                        <div class="mockup-card-line"></div>
+                      </div>
+                      <div class="mockup-card">
+                        <div class="mockup-card-icon"></div>
+                        <div class="mockup-card-line"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="laptop-base"></div>
+              </div>
+
+              <!-- Companion Phone Mockup -->
+              <div class="phone-mockup">
+                <div class="phone-screen">
+                  <div class="phone-notch"></div>
+                  <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <div style="width:24px; height:6px; background:#D6B56D; border-radius:1px;"></div>
+                    <div style="width:10px; height:6px; background:#64748B; border-radius:1px;"></div>
+                  </div>
+                  <div style="margin-top:6px;">
+                    <div class="phone-hero-bar"></div>
+                    <div class="phone-sub-bar" style="margin-top:3px;"></div>
+                    <div class="phone-btn"></div>
+                  </div>
+                  <div class="phone-card">
+                    <div style="width:10px; height:10px; background:#D6B56D; border-radius:2px;"></div>
+                    <div style="width:80%; height:4px; background:#94A3B8; border-radius:1px;"></div>
+                  </div>
+                  <div class="phone-card">
+                    <div style="width:10px; height:10px; background:#25D366; border-radius:2px;"></div>
+                    <div style="width:70%; height:4px; background:#94A3B8; border-radius:1px;"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       SERVICES SECTION
+       ========================================================================== -->
+    <section class="section" id="layanan">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-tag">PILIHAN LAYANAN</div>
+          <h2 class="section-title">Solusi Website &amp; IT dalam Satu Tempat</h2>
+          <p class="section-desc">
+            Dukung kebutuhan usaha dan pekerjaan Anda melalui layanan teknologi yang dapat disesuaikan dengan kondisi, tujuan, dan anggaran.
+          </p>
+        </div>
+
+        <!-- 8 Services Cards -->
+        <div class="services-grid">
+          
+          <!-- Card 1: Pembuatan Website (Highlighted) -->
+          <div class="service-card highlighted">
+            <span class="card-badge">Layanan Utama</span>
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <span class="service-category-tag">Desain &amp; Pengembangan</span>
+            <h3 class="service-title">Pembuatan Website</h3>
+            <p class="service-desc">
+              Landing page dan website company profile dengan desain profesional, responsif, serta tombol WhatsApp untuk memudahkan calon pelanggan menghubungi usaha Anda.
+            </p>
+            <ul class="service-features">
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Website usaha dan jasa</span>
+              </li>
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Tampilan mobile-friendly</span>
+              </li>
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Profil, layanan, lokasi, dan kontak</span>
+              </li>
+            </ul>
+            <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Teknologi%2C%20saya%20tertarik%20dengan%20layanan%20Pembuatan%20Website.%20Saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20dan%20biayanya." 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn btn-wa">
+              Konsultasikan Layanan
+            </a>
+          </div>
+
+          <!-- Card 2: Service Laptop & Komputer -->
+          <div class="service-card">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="4" width="16" height="12" rx="2"/>
+                <path d="M2 20h20"/>
+                <path d="M12 16v4"/>
+              </svg>
+            </div>
+            <span class="service-category-tag">Hardware &amp; Software</span>
+            <h3 class="service-title">Service Laptop &amp; Komputer</h3>
+            <p class="service-desc">
+              Pemeriksaan kendala, perawatan, upgrade perangkat, serta instalasi software berlisensi untuk mendukung pekerjaan Anda.
+            </p>
+            <ul class="service-features">
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Troubleshooting komputer dan laptop</span>
+              </li>
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Upgrade RAM dan SSD</span>
+              </li>
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Instalasi dan perawatan perangkat</span>
+              </li>
+            </ul>
+            <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Teknologi%2C%20saya%20tertarik%20dengan%20layanan%20Service%20Laptop%20%26%20Komputer.%20Saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20dan%20biayanya." 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn btn-outline-dark">
+              Konsultasikan Layanan
+            </a>
+          </div>
+
+          <!-- Card 3: Instalasi Jaringan & Wi-Fi -->
+          <div class="service-card">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+                <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+                <line x1="12" y1="20" x2="12.01" y2="20"/>
+              </svg>
+            </div>
+            <span class="service-category-tag">Koneksi &amp; Infrastruktur</span>
+            <h3 class="service-title">Instalasi Jaringan &amp; Wi-Fi</h3>
+            <p class="service-desc">
+              Pemasangan dan pengaturan jaringan untuk rumah, toko, dan kantor, termasuk penanganan koneksi yang bermasalah.
+            </p>
+            <ul class="service-features">
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>LAN, router, dan Wi-Fi</span>
+              </li>
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Pengaturan jaringan</span>
+              </li>
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Troubleshooting koneksi</span>
+              </li>
+            </ul>
+            <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Teknologi%2C%20saya%20tertarik%20dengan%20layanan%20Instalasi%20Jaringan%20%26%20Wi-Fi.%20Saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20dan%20biayanya." 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn btn-outline-dark">
+              Konsultasikan Layanan
+            </a>
+          </div>
+
+          <!-- Card 4: Instalasi & Perawatan CCTV -->
+          <div class="service-card">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 7l-7 5 7 5V7z"/>
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+              </svg>
+            </div>
+            <span class="service-category-tag">Keamanan Lokasi</span>
+            <h3 class="service-title">Instalasi &amp; Perawatan CCTV</h3>
+            <p class="service-desc">
+              Pemasangan dan pengaturan CCTV untuk membantu pemantauan rumah maupun tempat usaha sesuai kebutuhan lokasi.
+            </p>
+            <ul class="service-features">
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Pemasangan kamera</span>
+              </li>
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Pengaturan akses melalui HP</span>
+              </li>
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Pemeriksaan dan perawatan</span>
+              </li>
+            </ul>
+            <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Teknologi%2C%20saya%20tertarik%20dengan%20layanan%20Instalasi%20%26%20Perawatan%20CCTV.%20Saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20dan%20biayanya." 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn btn-outline-dark">
+              Konsultasikan Layanan
+            </a>
+          </div>
+
+          <!-- Card 5: Printer & Perangkat Kantor -->
+          <div class="service-card">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"/>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                <rect x="6" y="14" width="12" height="8"/>
+              </svg>
+            </div>
+            <span class="service-category-tag">Perangkat Kerja</span>
+            <h3 class="service-title">Printer &amp; Perangkat Kantor</h3>
+            <p class="service-desc">
+              Bantuan instalasi dan pengaturan printer serta penanganan masalah koneksi perangkat untuk mendukung aktivitas kantor.
+            </p>
+            <ul class="service-features">
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Instalasi printer</span>
+              </li>
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Sharing printer melalui jaringan</span>
+              </li>
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Pemeriksaan kendala perangkat</span>
+              </li>
+            </ul>
+            <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Teknologi%2C%20saya%20tertarik%20dengan%20layanan%20Printer%20%26%20Perangkat%20Kantor.%20Saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20dan%20biayanya." 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn btn-outline-dark">
+              Konsultasikan Layanan
+            </a>
+          </div>
+
+          <!-- Card 6: Backup & Pemulihan Data -->
+          <div class="service-card">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+              </svg>
+            </div>
+            <span class="service-category-tag">Keamanan Berkas</span>
+            <h3 class="service-title">Backup &amp; Pemulihan Data</h3>
+            <p class="service-desc">
+              Pengaturan backup, pemindahan data, dan pemeriksaan kemungkinan pemulihan file sesuai kondisi media penyimpanan.
+            </p>
+            <ul class="service-features">
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Backup data</span>
+              </li>
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Migrasi data</span>
+              </li>
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Pemeriksaan file hilang</span>
+              </li>
+            </ul>
+            <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Teknologi%2C%20saya%20tertarik%20dengan%20layanan%20Backup%20%26%20Pemulihan%20Data.%20Saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20dan%20biayanya." 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn btn-outline-dark">
+              Konsultasikan Layanan
+            </a>
+          </div>
+
+          <!-- Card 7: IT Support & Maintenance -->
+          <div class="service-card">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <span class="service-category-tag">Dukungan Rutin</span>
+            <h3 class="service-title">IT Support &amp; Maintenance</h3>
+            <p class="service-desc">
+              Bantuan teknis melalui remote atau kunjungan serta perawatan berkala untuk membantu menjaga kesiapan perangkat dan jaringan.
+            </p>
+            <ul class="service-features">
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Dukungan remote</span>
+              </li>
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Kunjungan sesuai kesepakatan</span>
+              </li>
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Perawatan IT berkala</span>
+              </li>
+            </ul>
+            <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Teknologi%2C%20saya%20tertarik%20dengan%20layanan%20IT%20Support%20%26%20Maintenance.%20Saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20dan%20biayanya." 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn btn-outline-dark">
+              Konsultasikan Layanan
+            </a>
+          </div>
+
+          <!-- Card 8: Solusi Digital & Administrasi -->
+          <div class="service-card">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <span class="service-category-tag">Efisiensi Kerja</span>
+            <h3 class="service-title">Solusi Digital &amp; Administrasi</h3>
+            <p class="service-desc">
+              Permudah pekerjaan rutin melalui template administrasi, formulir online, dan laporan sederhana sesuai alur kerja Anda.
+            </p>
+            <ul class="service-features">
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Excel dan Google Sheets</span>
+              </li>
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Formulir online</span>
+              </li>
+              <li class="service-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Rekap dan otomatisasi sederhana</span>
+              </li>
+            </ul>
+            <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Teknologi%2C%20saya%20tertarik%20dengan%20layanan%20Solusi%20Digital%20%26%20Administrasi.%20Saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20dan%20biayanya." 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn btn-outline-dark">
+              Konsultasikan Layanan
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Clarification / Scope Note -->
+        <div class="services-disclaimer">
+          <div class="disclaimer-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+          </div>
+          <p class="disclaimer-text">
+            Pembuatan website dan layanan remote untuk pelanggan di berbagai wilayah Indonesia. Kunjungan teknisi tersedia sesuai lokasi, kebutuhan, dan kesepakatan.<br>
+            <span style="color: var(--color-text-secondary); font-size: 0.85rem; display: inline-block; margin-top: 4px;">* Layanan digital dan remote dapat dilakukan lintas wilayah. Pekerjaan yang membutuhkan kehadiran teknisi dikonfirmasi berdasarkan lokasi dan ketersediaan.</span>
+          </p>
+        </div>
+
+        <!-- NEW: High-Conversion Interactive Consultation Widget -->
+        <div class="consultation-box">
+          <div class="consultation-header">
+            <h3 class="consultation-title">Ingin Konsultasi Cepat Sesuai Kebutuhan?</h3>
+            <p class="consultation-subtitle">Pilih jenis layanan dan bidang usaha Anda di bawah ini untuk membentuk format pesan otomatis ke WhatsApp kami.</p>
+          </div>
+
+          <div class="selector-grid">
+            <div>
+              <span class="selector-label">1. Pilih Layanan yang Dibutuhkan:</span>
+              <div class="chip-group" id="service-chips">
+                <button type="button" class="chip-btn active" data-value="Pembuatan Website">Pembuatan Website</button>
+                <button type="button" class="chip-btn" data-value="Service Laptop &amp; Komputer">Service Komputer</button>
+                <button type="button" class="chip-btn" data-value="Instalasi Jaringan &amp; Wi-Fi">Jaringan &amp; Wi-Fi</button>
+                <button type="button" class="chip-btn" data-value="Instalasi &amp; Perawatan CCTV">CCTV</button>
+                <button type="button" class="chip-btn" data-value="IT Support &amp; Maintenance">IT Support</button>
+                <button type="button" class="chip-btn" data-value="Solusi Digital &amp; Administrasi">Otomasi Digital</button>
+              </div>
+            </div>
+
+            <div>
+              <span class="selector-label">2. Profil / Bidang Usaha:</span>
+              <div class="chip-group" id="target-chips">
+                <button type="button" class="chip-btn active" data-value="pelaku UMKM / Toko">UMKM / Toko</button>
+                <button type="button" class="chip-btn" data-value="bisnis jasa">Bisnis Jasa</button>
+                <button type="button" class="chip-btn" data-value="perusahaan / kantor">Perusahaan / Kantor</button>
+                <button type="button" class="chip-btn" data-value="pengguna pribadi">Pribadi</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview-chat-card">
+            <div class="preview-chat-text">
+              <div class="preview-chat-label">Pratinjau Pesan WhatsApp Anda:</div>
+              <div class="preview-chat-quote" id="preview-quote">
+                "Halo Solvia Teknologi, saya pelaku UMKM / Toko tertarik dengan layanan Pembuatan Website. Saya ingin berkonsultasi mengenai kebutuhan dan biayanya."
+              </div>
+            </div>
+            <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Teknologi%2C%20saya%20pelaku%20UMKM%20%2F%20Toko%20tertarik%20dengan%20layanan%20Pembuatan%20Website.%20Saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20dan%20biayanya." 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn btn-wa" 
+               id="dynamic-wa-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+              Kirim via WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       WHY CHOOSE US SECTION
+       ========================================================================== -->
+    <section class="section" id="keunggulan">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-tag">NILAI UTAMA</div>
+          <h2 class="section-title">Partner yang Memahami Kebutuhan Teknologi Anda</h2>
+          <p class="section-desc">
+            Kami mengutamakan kejujuran teknis, komunikasi yang terbuka, dan kesepakatan yang jelas agar solusi yang diberikan tepat sasaran.
+          </p>
+        </div>
+
+        <!-- 4 Advantages Grid -->
+        <div class="why-us-grid">
+          
+          <!-- Advantage 1 -->
+          <div class="why-card">
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 8v4l3 3"></path>
+              </svg>
+            </div>
+            <h3 class="why-title">Pendekatan Teknis yang Jelas</h3>
+            <p class="why-desc">
+              Kebutuhan dan kendala diperiksa terlebih dahulu agar solusi yang ditawarkan sesuai.
+            </p>
+          </div>
+
+          <!-- Advantage 2 -->
+          <div class="why-card">
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <h3 class="why-title">Biaya Transparan</h3>
+            <p class="why-desc">
+              Lingkup pekerjaan dan biaya disepakati sebelum proses pengerjaan dimulai.
+            </p>
+          </div>
+
+          <!-- Advantage 3 -->
+          <div class="why-card">
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <h3 class="why-title">Solusi Sesuai Kebutuhan</h3>
+            <p class="why-desc">
+              Pilihan layanan disesuaikan dengan kondisi perangkat, alur kerja, dan anggaran Anda.
+            </p>
+          </div>
+
+          <!-- Advantage 4 -->
+          <div class="why-card">
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="why-title">Komunikasi Mudah Dipahami</h3>
+            <p class="why-desc">
+              Penjelasan layanan dan hasil pekerjaan disampaikan dengan bahasa yang jelas.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Profile Card -->
+        <div class="profile-card">
+          <div class="profile-symbol" aria-hidden="true">
+            <!-- ST Monogram in Profile -->
+            <svg width="34" height="34" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M29 14H15a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H14" stroke="#D6B56D" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22 14v16" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="31" cy="30" r="2.2" fill="#25D366"/>
+            </svg>
+          </div>
+          <p class="profile-text">
+            <strong>Solvia Teknologi</strong> dibangun dengan latar belakang pengalaman di bidang IT untuk membantu pengguna pribadi dan pelaku usaha memenuhi kebutuhan teknologi secara praktis.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       HOW TO ORDER / PROCESS SECTION
+       ========================================================================== -->
+    <section class="section" id="cara-pemesanan" style="background-color: #F1F5F9;">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-tag">ALUR PENGERJAAN</div>
+          <h2 class="section-title">Proses Mudah, Pengerjaan Lebih Terarah</h2>
+          <p class="section-desc">
+            Lima tahapan terstruktur yang memastikan kebutuhan Anda dipahami dan diselesaikan dengan tenang.
+          </p>
+        </div>
+
+        <!-- 5 Step Flow -->
+        <div class="steps-wrapper">
+          <div class="steps-grid">
+            
+            <!-- Step 1 -->
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <h3 class="step-title">Konsultasi</h3>
+              <p class="step-desc">
+                Ceritakan kebutuhan atau kendala melalui WhatsApp.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <h3 class="step-title">Pemeriksaan Kebutuhan</h3>
+              <p class="step-desc">
+                Kami mempelajari lingkup pekerjaan, lokasi jika diperlukan, dan kemungkinan penanganan secara remote.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <h3 class="step-title">Penawaran</h3>
+              <p class="step-desc">
+                Layanan, biaya, estimasi waktu, dan metode pengerjaan dijelaskan sebelum Anda menyetujui pekerjaan.
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-card">
+              <div class="step-number">4</div>
+              <h3 class="step-title">Pengerjaan</h3>
+              <p class="step-desc">
+                Pekerjaan dimulai setelah lingkup dan ketentuan disepakati.
+              </p>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step-card">
+              <div class="step-number">5</div>
+              <h3 class="step-title">Pengujian &amp; Penyerahan</h3>
+              <p class="step-desc">
+                Hasil diperiksa bersama dan diserahkan beserta penjelasan yang diperlukan.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       FAQ SECTION
+       ========================================================================== -->
+    <section class="section" id="faq">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-tag">TANYA JAWAB</div>
+          <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+          <p class="section-desc">
+            Temukan jawaban langsung seputar jangkauan wilayah, biaya, metode pengerjaan, dan dukungan teknis.
+          </p>
+        </div>
+
+        <div class="faq-wrapper" id="faq-accordion">
+          
+          <!-- Item 1 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-1" id="faq-btn-1">
+              <span>Apakah melayani pelanggan di luar kota?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1">
+              <div class="faq-answer-inner">
+                Ya. Pembuatan website, konsultasi, dan pekerjaan yang memungkinkan ditangani secara remote dapat dilakukan untuk pelanggan di berbagai wilayah Indonesia. Layanan yang membutuhkan kunjungan dikonfirmasi berdasarkan lokasi dan ketersediaan.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-2" id="faq-btn-2">
+              <span>Berapa biaya pembuatan website?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2">
+              <div class="faq-answer-inner">
+                Biaya bergantung pada jumlah bagian, fitur, materi, dan tingkat penyesuaian yang dibutuhkan. Hubungi kami untuk mendapatkan penawaran sesuai kebutuhan.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-3" id="faq-btn-3">
+              <span>Apakah domain dan hosting sudah termasuk?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3">
+              <div class="faq-answer-inner">
+                Komponen domain dan hosting akan dijelaskan pada penawaran, termasuk apakah sudah termasuk paket atau dihitung terpisah.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-4" id="faq-btn-4">
+              <span>Berapa lama proses pembuatan website?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4">
+              <div class="faq-answer-inner">
+                Estimasi waktu ditentukan berdasarkan lingkup pekerjaan dan kelengkapan materi. Jadwal disepakati sebelum pengerjaan dimulai.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-5" id="faq-btn-5">
+              <span>Bagaimana layanan IT secara remote dilakukan?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5">
+              <div class="faq-answer-inner">
+                Setelah konsultasi awal, kami menentukan apakah kendala dapat ditangani secara remote. Jika membutuhkan akses perangkat, proses dan izinnya akan dijelaskan terlebih dahulu kepada pelanggan.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-6" id="faq-btn-6">
+              <span>Apakah bisa melakukan kunjungan ke rumah atau kantor?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-6" role="region" aria-labelledby="faq-btn-6">
+              <div class="faq-answer-inner">
+                Kunjungan dapat diatur berdasarkan lokasi, kebutuhan pekerjaan, dan ketersediaan teknisi. Jadwal serta biaya kunjungan dikonfirmasi sebelum pengerjaan.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 7 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-7" id="faq-btn-7">
+              <span>Apakah website bisa diperbarui setelah selesai?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-7" role="region" aria-labelledby="faq-btn-7">
+              <div class="faq-answer-inner">
+                Bisa. Pembaruan konten dan perawatan dapat dibicarakan sebagai pekerjaan tambahan atau layanan berkala sesuai kebutuhan.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 8 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-8" id="faq-btn-8">
+              <span>Apakah data yang hilang pasti bisa dipulihkan?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-8" role="region" aria-labelledby="faq-btn-8">
+              <div class="faq-answer-inner">
+                Kemungkinan pemulihan bergantung pada kondisi media penyimpanan dan hasil pemeriksaan. Pilihan penanganan akan dijelaskan tanpa menjanjikan keberhasilan sebelum pemeriksaan.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 9 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-9" id="faq-btn-9">
+              <span>Apakah ada bantuan setelah pekerjaan selesai?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-9" role="region" aria-labelledby="faq-btn-9">
+              <div class="faq-answer-inner">
+                Ketentuan bantuan, revisi, dan cakupan layanan setelah penyerahan dijelaskan dalam penawaran sesuai jenis pekerjaan.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       CLOSING CTA & CONTACT SECTION
+       ========================================================================== -->
+    <section class="section cta-section" id="kontak">
+      <div class="container">
+        
+        <div class="cta-card">
+          <h2 class="cta-title">Butuh Website Profesional atau Bantuan IT?</h2>
+          <p class="cta-desc">
+            Ceritakan kebutuhan Anda. Solvia Teknologi siap membantu menentukan layanan yang sesuai untuk usaha maupun pekerjaan Anda.
+          </p>
+          
+          <div class="cta-actions">
+            <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Teknologi%2C%20saya%20ingin%20berkonsultasi%20mengenai%20jasa%20pembuatan%20website%20%2F%20layanan%20IT.%20Mohon%20informasinya." 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn btn-wa">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+              Hubungi Kami via WhatsApp
+            </a>
+          </div>
+
+          <!-- Structured Accurate Information List -->
+          <div class="cta-info-grid">
+            <div class="info-item">
+              <svg class="info-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <div>
+                <strong>WhatsApp</strong>
+                <span>08111011071</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <svg class="info-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+              <div>
+                <strong>Website &amp; Layanan Digital</strong>
+                <span>Lintas wilayah Indonesia</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <svg class="info-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <div>
+                <strong>IT Support Remote</strong>
+                <span>Sesuai jenis kendala</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <svg class="info-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <div>
+                <strong>Kunjungan Teknisi</strong>
+                <span>Sesuai lokasi dan kesepakatan</span>
+              </div>
+            </div>
+
+            <div class="info-item" style="grid-column: 1 / -1;">
+              <svg class="info-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <div>
+                <strong>Jadwal Layanan</strong>
+                <span>Hubungi kami untuk pengaturan jadwal konsultasi atau pengerjaan</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <a href="#beranda" class="brand-logo" aria-label="Solvia Teknologi - Kembali ke atas">
+            <div class="monogram-box" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M29 14H15a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H14" stroke="#D6B56D" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 14v16" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="31" cy="30" r="2.2" fill="#25D366"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">Solvia Teknologi</span>
+              <span class="brand-subtitle">Website &amp; IT Solution</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="footer-links-group">
+          <div class="footer-links-title">Navigasi Utama</div>
+          <ul class="footer-nav">
+            <li><a href="#beranda" class="footer-link">Beranda</a></li>
+            <li><a href="#layanan" class="footer-link">Layanan</a></li>
+            <li><a href="#keunggulan" class="footer-link">Keunggulan</a></li>
+            <li><a href="#cara-pemesanan" class="footer-link">Cara Pemesanan</a></li>
+            <li><a href="#faq" class="footer-link">FAQ</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright Notice -->
+      <div class="footer-bottom">
+        <p>Copyright &copy; 2026 Solvia Teknologi</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       FLOATING WHATSAPP BUTTON (CONVERSION OPTIMIZED)
+       ========================================================================== -->
+  <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Teknologi%2C%20saya%20ingin%20berkonsultasi%20mengenai%20jasa%20pembuatan%20website%20%2F%20layanan%20IT.%20Mohon%20informasinya." 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="floating-wa-btn" 
+     aria-label="Konsultasi cepat melalui WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+    </svg>
+    <span>Chat WhatsApp</span>
+  </a>
+
+  <!-- ==========================================================================
+       VANILLA JAVASCRIPT LOGIC
+       ========================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* --- 1. Mobile Menu Handling --- */
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const navMenu = document.getElementById('nav-menu');
+      const navLinks = navMenu.querySelectorAll('a');
+
+      function toggleMobileMenu() {
+        const isOpen = navMenu.classList.toggle('is-active');
+        hamburgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        hamburgerBtn.setAttribute('aria-label', isOpen ? 'Tutup navigasi menu' : 'Buka navigasi menu');
+      }
+
+      function closeMobileMenu() {
+        if (navMenu.classList.contains('is-active')) {
+          navMenu.classList.remove('is-active');
+          hamburgerBtn.setAttribute('aria-expanded', 'false');
+          hamburgerBtn.setAttribute('aria-label', 'Buka navigasi menu');
+        }
+      }
+
+      hamburgerBtn.addEventListener('click', toggleMobileMenu);
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+
+      /* --- 2. FAQ Accordion Handling --- */
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(item => {
+        const btn = item.querySelector('.faq-question');
+        btn.addEventListener('click', function () {
+          const isOpen = item.classList.contains('is-open');
+
+          // Close all items
+          faqItems.forEach(otherItem => {
+            otherItem.classList.remove('is-open');
+            otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          });
+
+          // Toggle clicked item
+          if (!isOpen) {
+            item.classList.add('is-open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      /* --- 3. Interactive WhatsApp Consultation Generator --- */
+      const serviceChips = document.querySelectorAll('#service-chips .chip-btn');
+      const targetChips = document.querySelectorAll('#target-chips .chip-btn');
+      const previewQuote = document.getElementById('preview-quote');
+      const dynamicWaBtn = document.getElementById('dynamic-wa-btn');
+
+      let selectedService = 'Pembuatan Website';
+      let selectedTarget = 'pelaku UMKM / Toko';
+
+      function updateConsultationMessage() {
+        const rawMessage = `Halo Solvia Teknologi, saya ${selectedTarget} tertarik dengan layanan ${selectedService}. Saya ingin berkonsultasi mengenai kebutuhan dan biayanya.`;
+        previewQuote.textContent = `"${rawMessage}"`;
+        const encoded = encodeURIComponent(rawMessage);
+        dynamicWaBtn.href = `https://wa.me/628111011071?text=${encoded}`;
+      }
+
+      serviceChips.forEach(chip => {
+        chip.addEventListener('click', function () {
+          serviceChips.forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+          selectedService = this.getAttribute('data-value');
+          updateConsultationMessage();
+        });
+      });
+
+      targetChips.forEach(chip => {
+        chip.addEventListener('click', function () {
+          targetChips.forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+          selectedTarget = this.getAttribute('data-value');
+          updateConsultationMessage();
+        });
+      });
+
+      /* --- 4. Sticky Header Enhancement on Scroll --- */
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 20) {
+          navbar.style.borderBottomColor = 'rgba(214, 181, 109, 0.3)';
+          navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.4)';
+        } else {
+          navbar.style.borderBottomColor = 'rgba(214, 181, 109, 0.16)';
+          navbar.style.boxShadow = 'none';
+        }
+      }, { passive: true });
+
+    })();
+  </script>
+</body>
+</html>
