@@ -141,7 +141,12 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 85px;
       font-size: 16px;
+    }
+
+    section[id], .section[id] {
+      scroll-margin-top: 85px;
     }
 
     body {
@@ -392,39 +397,57 @@
     .nav-menu {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 4px;
       flex-wrap: nowrap;
       white-space: nowrap;
     }
 
     .nav-link {
-      font-size: 0.86rem;
+      font-size: 0.83rem;
       font-weight: 600;
       color: var(--text-muted);
       position: relative;
-      padding: 6px 0;
+      padding: 6px 10px;
+      border-radius: 8px;
       white-space: nowrap;
+      transition: color 0.15s ease, background-color 0.15s ease;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
     }
 
-    .nav-link:hover, .nav-link.active {
+    .nav-link:hover {
       color: var(--text-white);
+      background-color: rgba(255, 255, 255, 0.08);
     }
 
-    .nav-link.active::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: var(--gold-gradient);
-      border-radius: 2px;
+    .nav-link.active {
+      color: var(--gold-primary);
+      background-color: rgba(214, 181, 109, 0.14);
+    }
+
+    .nav-link.active:hover {
+      background-color: rgba(214, 181, 109, 0.2);
     }
 
     .nav-actions {
       display: flex;
       align-items: center;
       gap: 12px;
+    }
+
+    .header-wa-btn {
+      padding: 8px 16px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      text-decoration: none;
     }
 
     /* Aesthetic Theme Toggle Switch */
@@ -557,46 +580,54 @@
       font-weight: 600;
       color: var(--text-muted);
       display: block;
-      padding: 6px 0;
+      padding: 8px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      transition: color 0.2s ease, padding-left 0.2s ease;
     }
 
-    .mobile-nav-link:hover {
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
       color: var(--gold-primary);
+      padding-left: 6px;
+      font-weight: 700;
     }
 
     /* ==========================================================================
-       HERO SECTION (FRIENDLY, CLEAR & DIRECT)
+       HERO SECTION (TWO-COLUMN ELEGANT SHOWCASE)
        ========================================================================== --> */
     .hero {
-      padding: 75px 0 95px 0;
+      padding: 65px 0 85px 0;
       position: relative;
       overflow: hidden;
     }
 
     .hero-glow-1 {
       position: absolute;
-      top: -160px;
-      left: 50%;
-      transform: translateX(-50%);
+      top: -120px;
+      right: -80px;
       width: 650px;
       height: 650px;
-      background: radial-gradient(circle, rgba(214, 181, 109, 0.14) 0%, rgba(6, 11, 20, 0) 70%);
+      background: radial-gradient(circle, rgba(214, 181, 109, 0.12) 0%, rgba(6, 11, 20, 0) 70%);
       pointer-events: none;
       z-index: 1;
     }
 
-    .hero-content {
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 48fr 52fr;
+      gap: 40px;
+      align-items: center;
       position: relative;
       z-index: 2;
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto;
+    }
+
+    .hero-text {
+      text-align: left;
     }
 
     .hero-badge-wrap {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       margin-bottom: 20px;
     }
 
@@ -611,6 +642,7 @@
       color: var(--gold-primary);
       font-size: 0.84rem;
       font-weight: 700;
+      letter-spacing: 0.03em;
     }
 
     .pulse-dot {
@@ -629,246 +661,174 @@
     }
 
     .hero-title {
-      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      font-size: clamp(2rem, 3.1vw, 3.1rem);
       font-weight: 800;
       line-height: 1.22;
       color: var(--text-white);
-      margin-bottom: 22px;
+      margin-bottom: 18px;
       letter-spacing: -0.02em;
     }
 
     .hero-desc {
-      font-size: clamp(1rem, 1.3vw, 1.18rem);
+      font-size: clamp(0.96rem, 1.18vw, 1.1rem);
       color: var(--text-muted);
-      line-height: 1.75;
-      max-width: 760px;
-      margin: 0 auto 34px auto;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .hero-price-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      background: rgba(214, 181, 109, 0.1);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-primary);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 24px;
     }
 
     .hero-cta-group {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 16px;
+      justify-content: flex-start;
+      gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 40px;
     }
 
-    .hero-guarantee {
+    .hero-keypoints {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 24px;
+      justify-content: flex-start;
+      gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 45px;
+      margin-top: 22px;
     }
 
-    .hero-guarantee-item {
+    .hero-keypoint-item {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       font-size: 0.86rem;
       font-weight: 600;
       color: var(--text-muted);
     }
 
-    .hero-guarantee-item svg {
-      width: 17px;
-      height: 17px;
+    .hero-keypoint-item svg {
+      width: 15px;
+      height: 15px;
       color: var(--wa-green);
       flex-shrink: 0;
     }
 
-    /* Hero Friendly Showcase Box */
-    .hero-showcase-box {
-      margin-top: 25px;
-      background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(9, 14, 26, 0.95) 100%);
-      border: 1px solid var(--border-gold);
-      border-radius: var(--radius-lg);
-      padding: 30px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(214, 181, 109, 0.08);
-      text-align: left;
+    .hero-keypoint-dot {
+      color: var(--text-dim);
+      font-size: 0.75rem;
     }
 
-    .showcase-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 26px;
-      align-items: center;
-    }
-
-    .showcase-badge {
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: var(--radius-full);
-      background: rgba(37, 211, 102, 0.15);
-      color: var(--wa-green);
-      font-size: 0.78rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .showcase-title {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--text-white);
-      margin-bottom: 10px;
-      line-height: 1.35;
-    }
-
-    .showcase-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .showcase-features-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .showcase-feature-card {
-      background: rgba(6, 11, 20, 0.6);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      padding: 14px;
+    /* Hero Mockup Visual */
+    .hero-visual {
+      position: relative;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      align-items: center;
+      width: 100%;
     }
 
-    .showcase-feature-val {
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: var(--gold-primary);
+    .hero-mockup-backdrop {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 95%;
+      max-width: 520px;
+      height: 80%;
+      background: radial-gradient(ellipse at center, rgba(214, 181, 109, 0.22) 0%, rgba(37, 211, 102, 0.08) 45%, rgba(6, 11, 20, 0) 72%);
+      filter: blur(40px);
+      pointer-events: none;
+      z-index: 1;
     }
 
-    .showcase-feature-val.green {
-      color: var(--wa-green);
+    .hero-mockup-img {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: auto;
+      max-width: 580px;
+      display: block;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 42px rgba(0, 0, 0, 0.55));
+      transition: transform 0.35s ease, filter 0.35s ease;
     }
 
-    .showcase-feature-text {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.4;
+    .hero-mockup-img:hover {
+      transform: translateY(-4px) scale(1.01);
+      filter: drop-shadow(0 28px 52px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 30px rgba(214, 181, 109, 0.2));
+    }
+
+    .hero-mockup-caption {
+      position: relative;
+      z-index: 2;
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      text-align: center;
+      margin-top: 12px;
+      font-weight: 500;
     }
 
     /* ==========================================================================
-       SECTION: MENGAPA BUTUH LANDING PAGE UNTUK USAHA? (UMUM & MENARIK)
+       BARIS RINGKAS: KATEGORI USAHA (SETELAH HERO)
        ========================================================================== --> */
-    .benefit-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .benefit-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 30px 24px;
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .benefit-card:hover {
-      border-color: var(--gold-primary);
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(214, 181, 109, 0.08);
-    }
-
-    .benefit-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 12px;
-      background: rgba(214, 181, 109, 0.1);
-      border: 1px solid var(--border-gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold-primary);
-      margin-bottom: 18px;
-    }
-
-    .benefit-icon svg {
-      width: 24px;
-      height: 24px;
-    }
-
-    .benefit-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text-white);
-      margin-bottom: 10px;
-    }
-
-    .benefit-desc {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* ==========================================================================
-       SECTION: COCOK UNTUK SIAPA SAJA? (KATEGORI SATU BARIS)
-       ========================================================================== --> */
-    #cocok-untuk .section-header {
-      margin-bottom: 28px;
-    }
-
-    .category-strip-wrap {
+    .hero-category-strip-wrap {
+      margin-top: 36px;
       display: flex;
       justify-content: center;
-      margin-top: 0;
+      width: 100%;
     }
 
-    .category-strip {
+    .hero-category-strip {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 16px 22px;
-      padding: 16px 36px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-gold);
+      gap: 10px 14px;
+      padding: 12px 28px;
+      background: rgba(214, 181, 109, 0.05);
+      border: 1px solid rgba(214, 181, 109, 0.22);
       border-radius: var(--radius-full);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(214, 181, 109, 0.08);
-      font-size: 1.25rem;
-      font-weight: 800;
+      font-size: 0.95rem;
       color: var(--text-white);
-      letter-spacing: 0.03em;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .category-strip-lead {
+      font-weight: 700;
+      color: var(--gold-primary);
     }
 
     .category-item {
+      font-weight: 600;
       color: var(--text-white);
-      transition: color 0.2s ease, transform 0.2s ease;
-      display: inline-block;
-    }
-
-    .category-item:hover {
-      color: var(--gold-primary);
-      transform: translateY(-1px);
     }
 
     .category-separator {
       color: var(--gold-primary);
-      font-weight: 900;
-      font-size: 1.4rem;
-      line-height: 1;
+      font-weight: 700;
       user-select: none;
     }
 
-    @media (max-width: 768px) {
-      .category-strip {
-        padding: 12px 20px;
-        font-size: 1.02rem;
-        gap: 8px 12px;
-        border-radius: var(--radius-lg);
+    @media (max-width: 640px) {
+      .hero-category-strip-wrap {
+        margin-top: 24px;
       }
-      .category-separator {
-        font-size: 1.15rem;
+      .hero-category-strip {
+        padding: 10px 16px;
+        font-size: 0.88rem;
+        gap: 8px 10px;
+        border-radius: 12px;
       }
     }
 
@@ -1187,11 +1147,11 @@
     }
 
     /* ==========================================================================
-       SECTION: KEUNGGULAN SOLVIA WEB
+       SECTION: KEUNGGULAN SOLVIA WEB (4 KARTU)
        ========================================================================== --> */
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 22px;
     }
 
@@ -1199,33 +1159,50 @@
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      padding: 26px 22px;
+      padding: 28px 22px;
       transition: var(--transition);
+      display: flex;
+      flex-direction: column;
     }
 
     .feature-box:hover {
-      border-color: rgba(214, 181, 109, 0.4);
+      border-color: rgba(214, 181, 109, 0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
     }
 
-    .feature-num {
-      font-size: 0.95rem;
-      font-weight: 800;
+    .feature-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(214, 181, 109, 0.1);
+      border: 1px solid rgba(214, 181, 109, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: var(--gold-primary);
-      margin-bottom: 8px;
-      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+
+    .feature-icon-box svg {
+      width: 24px;
+      height: 24px;
     }
 
     .feature-title {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       font-weight: 700;
       color: var(--text-white);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      line-height: 1.35;
     }
 
     .feature-desc {
-      font-size: 0.86rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
-      line-height: 1.6;
+      line-height: 1.65;
+      margin: 0;
     }
 
     /* ==========================================================================
@@ -1626,6 +1603,217 @@
       color: var(--text-muted);
       line-height: 1.6;
     }
+    /* ==========================================================================
+       SECTION: TENTANG SOLVIA WEB
+       ========================================================================== --> */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .about-narrative {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .about-narrative .section-tag {
+      margin-bottom: 12px;
+      align-self: flex-start;
+    }
+
+    .about-narrative .section-title {
+      text-align: left;
+      font-size: 2.15rem;
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+
+    .about-text {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .about-highlight-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 22px;
+      background: rgba(214, 181, 109, 0.06);
+      border-left: 3.5px solid var(--gold-primary);
+      border-radius: 0 12px 12px 0;
+      margin-top: 8px;
+    }
+
+    .about-highlight-icon {
+      color: var(--gold-primary);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .about-highlight-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .about-highlight-text {
+      font-size: 0.98rem;
+      font-style: italic;
+      font-weight: 600;
+      color: var(--text-white);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* Trust Panel (Right Column) */
+    .about-trust-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 28px 28px 12px 28px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .trust-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 12px;
+    }
+
+    .trust-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(214, 181, 109, 0.1);
+      border: 1px solid rgba(214, 181, 109, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-primary);
+      flex-shrink: 0;
+    }
+
+    .trust-icon-box svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .trust-content {
+      flex: 1;
+    }
+
+    .trust-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .trust-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Consultation CTA Box */
+    .about-cta-box {
+      margin-top: 48px;
+      padding: 30px 34px;
+      background: linear-gradient(135deg, rgba(214, 181, 109, 0.08) 0%, rgba(6, 11, 20, 0.65) 100%);
+      border: 1.2px solid rgba(214, 181, 109, 0.25);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .about-cta-content {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .about-cta-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 8px;
+    }
+
+    .about-cta-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .about-cta-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .about-cta-secondary-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .about-cta-secondary-link:hover {
+      color: var(--gold-primary);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    @media (max-width: 992px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .about-narrative .section-title {
+        font-size: 1.8rem;
+      }
+      .about-cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 24px 20px;
+      }
+      .about-cta-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .about-cta-actions .btn {
+        text-align: center;
+        justify-content: center;
+      }
+      .about-cta-secondary-link {
+        justify-content: center;
+      }
+    }
 
     /* ==========================================================================
        FAQ SECTION (PERTANYAAN UMUM)
@@ -1655,6 +1843,11 @@
     }
 
     .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      font-family: inherit;
       padding: 18px 22px;
       display: flex;
       align-items: center;
@@ -1665,13 +1858,29 @@
       font-weight: 700;
       color: var(--text-white);
       user-select: none;
+      line-height: 1.45;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .faq-question:hover {
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    .faq-question:focus-visible {
+      outline: 2px solid var(--gold-primary);
+      outline-offset: -2px;
+    }
+
+    .faq-q-text {
+      flex: 1;
+      text-align: left;
     }
 
     .faq-icon {
       width: 20px;
       height: 20px;
       color: var(--gold-primary);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       flex-shrink: 0;
     }
 
@@ -1682,7 +1891,7 @@
     .faq-answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.35s ease;
+      transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease;
       background: rgba(6, 11, 20, 0.4);
       padding: 0 22px;
       color: var(--text-muted);
@@ -1692,7 +1901,11 @@
 
     .faq-item.active .faq-answer {
       padding: 0 22px 20px 22px;
-      max-height: 350px;
+      max-height: 500px;
+    }
+
+    .faq-ans-text {
+      margin: 0;
     }
 
     /* ==========================================================================
@@ -1770,6 +1983,12 @@
     .footer-link:hover {
       color: var(--gold-primary);
       padding-left: 4px;
+    }
+
+    .footer-text-item {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.4;
     }
 
     .footer-contact-info {
@@ -1867,7 +2086,7 @@
        LIGHT THEME COMPONENT OVERRIDES & TRANSITIONS
        ========================================================================== --> */
     /* Transition for Smooth Theme Switching */
-    body, .header, .benefit-card, .audience-card, .portfolio-card, 
+    body, .header, .portfolio-card, 
     .feature-box, .pricing-card, .step-card, .calc-container, 
     .calc-radio-card, .calc-check-item, .calc-summary-card, 
     .faq-item, .cta-banner, .footer, .mobile-drawer, .logo-badge {
@@ -1905,18 +2124,21 @@
     }
 
     [data-theme="light"] .nav-link {
-      color: #334155;
-      font-weight: 600;
+      color: #475569;
     }
 
-    [data-theme="light"] .nav-link:hover,
-    [data-theme="light"] .nav-link.active {
+    [data-theme="light"] .nav-link:hover {
       color: #0F172A;
-      font-weight: 700;
+      background-color: rgba(15, 23, 42, 0.06);
     }
 
-    [data-theme="light"] .nav-link.active::after {
-      background: #85580C;
+    [data-theme="light"] .nav-link.active {
+      color: #85580C;
+      background-color: rgba(133, 88, 12, 0.1);
+    }
+
+    [data-theme="light"] .nav-link.active:hover {
+      background-color: rgba(133, 88, 12, 0.15);
     }
 
     [data-theme="light"] .mobile-menu-btn {
@@ -1937,46 +2159,44 @@
       font-weight: 700;
     }
 
-    [data-theme="light"] .hero-guarantee-item {
+    [data-theme="light"] .hero-price-badge {
+      background: rgba(133, 88, 12, 0.08);
+      border-color: rgba(133, 88, 12, 0.3);
+      color: #85580C;
+    }
+
+    [data-theme="light"] .hero-keypoint-item {
       color: #334155;
       font-weight: 600;
     }
 
-    [data-theme="light"] .hero-guarantee-item svg {
+    [data-theme="light"] .hero-keypoint-item svg {
       color: #15803D;
     }
 
-    /* Hero Showcase Box with Crystal-Clear Nested Cards */
-    [data-theme="light"] .hero-showcase-box {
-      background: #FFFFFF;
-      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.07), 0 0 25px rgba(133, 88, 12, 0.08);
-      border-color: rgba(133, 88, 12, 0.3);
+    [data-theme="light"] .hero-keypoint-dot {
+      color: #64748B;
     }
 
-    [data-theme="light"] .showcase-badge {
-      background: rgba(21, 128, 61, 0.1);
-      color: #15803D;
-      border: 1px solid rgba(21, 128, 61, 0.25);
+    [data-theme="light"] .hero-mockup-backdrop {
+      background: radial-gradient(ellipse at center, rgba(133, 88, 12, 0.14) 0%, rgba(21, 128, 61, 0.06) 45%, rgba(248, 250, 252, 0) 72%);
+      filter: blur(38px);
     }
 
-    [data-theme="light"] .showcase-feature-card {
-      background: #F8FAFC;
-      border: 1px solid rgba(15, 23, 42, 0.08);
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+    [data-theme="light"] .hero-mockup-img {
+      filter: drop-shadow(0 20px 38px rgba(15, 23, 42, 0.13)) drop-shadow(0 2px 8px rgba(15, 23, 42, 0.05));
     }
 
-    [data-theme="light"] .showcase-feature-val {
-      color: #85580C;
-      font-weight: 800;
+    [data-theme="light"] .hero-mockup-img:hover {
+      filter: drop-shadow(0 28px 48px rgba(15, 23, 42, 0.18)) drop-shadow(0 0 25px rgba(214, 181, 109, 0.2));
     }
 
-    [data-theme="light"] .showcase-feature-val.green {
-      color: #15803D;
+    [data-theme="light"] .hero-mockup-caption {
+      color: #64748B;
     }
 
-    [data-theme="light"] .showcase-feature-text {
-      color: #334155;
-      font-weight: 500;
+    [data-theme="light"] .btn-gold {
+      color: #FFFFFF;
     }
 
     /* 3. Section Badges, Headings & Text Gradients */
@@ -1995,8 +2215,6 @@
     }
 
     /* 4. Global Cards Elevation */
-    [data-theme="light"] .benefit-card,
-    [data-theme="light"] .audience-card,
     [data-theme="light"] .portfolio-card,
     [data-theme="light"] .feature-box,
     [data-theme="light"] .pricing-card,
@@ -2005,8 +2223,6 @@
       box-shadow: var(--card-shadow);
     }
 
-    [data-theme="light"] .benefit-card:hover,
-    [data-theme="light"] .audience-card:hover,
     [data-theme="light"] .portfolio-card:hover,
     [data-theme="light"] .feature-box:hover,
     [data-theme="light"] .pricing-card:hover,
@@ -2014,27 +2230,30 @@
       box-shadow: var(--card-shadow-hover);
     }
 
-    /* 5. Benefits & Audience Section */
-    [data-theme="light"] .benefit-icon {
+    /* 5. Keunggulan & Kategori Ringkas */
+    [data-theme="light"] .feature-icon-box {
       background: rgba(133, 88, 12, 0.08);
       border-color: rgba(133, 88, 12, 0.25);
       color: #85580C;
     }
 
-    [data-theme="light"] .audience-tag {
-      color: #15803D;
-      font-weight: 800;
+    [data-theme="light"] .hero-category-strip {
+      background: #FFFFFF;
+      border-color: rgba(133, 88, 12, 0.22);
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+      color: #0F172A;
     }
 
-    [data-theme="light"] .audience-examples {
+    [data-theme="light"] .category-strip-lead {
       color: #85580C;
-      font-weight: 700;
-      border-top-color: rgba(15, 23, 42, 0.08);
     }
 
-    [data-theme="light"] .feature-num {
+    [data-theme="light"] .category-item {
+      color: #1E293B;
+    }
+
+    [data-theme="light"] .category-separator {
       color: #85580C;
-      font-weight: 800;
     }
 
     /* 6. Portfolio Cards High Legibility */
@@ -2268,6 +2487,14 @@
       color: #0F172A;
     }
 
+    [data-theme="light"] .faq-question:hover {
+      background-color: rgba(15, 23, 42, 0.02);
+    }
+
+    [data-theme="light"] .faq-question:focus-visible {
+      outline-color: #85580C;
+    }
+
     [data-theme="light"] .faq-icon {
       color: #85580C;
     }
@@ -2276,6 +2503,76 @@
       background: #F8FAFC;
       color: #334155;
       border-top: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    /* 10b. Tentang Solvia Web Section */
+    [data-theme="light"] .about-title,
+    [data-theme="light"] .about-narrative .section-title {
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .about-text {
+      color: #334155;
+    }
+
+    [data-theme="light"] .about-highlight-card {
+      background: rgba(133, 88, 12, 0.06);
+      border-left-color: #85580C;
+    }
+
+    [data-theme="light"] .about-highlight-icon {
+      color: #85580C;
+    }
+
+    [data-theme="light"] .about-highlight-text {
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .about-trust-panel {
+      background: #FFFFFF;
+      border-color: rgba(15, 23, 42, 0.1);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    [data-theme="light"] .trust-item {
+      border-bottom-color: rgba(15, 23, 42, 0.08);
+    }
+
+    [data-theme="light"] .trust-icon-box {
+      background: rgba(133, 88, 12, 0.08);
+      border-color: rgba(133, 88, 12, 0.22);
+      color: #85580C;
+    }
+
+    [data-theme="light"] .trust-title {
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .trust-desc {
+      color: #475569;
+    }
+
+    [data-theme="light"] .about-cta-box {
+      background: linear-gradient(135deg, rgba(133, 88, 12, 0.07) 0%, rgba(255, 255, 255, 0.95) 100%);
+      border-color: rgba(133, 88, 12, 0.25);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    [data-theme="light"] .about-cta-title {
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .about-cta-desc {
+      color: #334155;
+    }
+
+    [data-theme="light"] .about-cta-secondary-link {
+      color: #475569;
+    }
+
+    [data-theme="light"] .about-cta-secondary-link:hover {
+      color: #85580C;
+      background: rgba(15, 23, 42, 0.05);
     }
 
     /* 11. CTA Banner, Mobile Drawer & Footer */
@@ -2294,10 +2591,14 @@
     [data-theme="light"] .mobile-nav-link {
       color: #1E293B;
       border-bottom-color: rgba(15, 23, 42, 0.08);
+      transition: color 0.2s ease, padding-left 0.2s ease;
     }
 
-    [data-theme="light"] .mobile-nav-link:hover {
+    [data-theme="light"] .mobile-nav-link:hover,
+    [data-theme="light"] .mobile-nav-link.active {
       color: #85580C;
+      padding-left: 6px;
+      font-weight: 700;
     }
 
     [data-theme="light"] .footer {
@@ -2352,14 +2653,27 @@
     /* ==========================================================================
        RESPONSIVE BREAKPOINTS
        ========================================================================== --> */
+    @media (max-width: 1180px) and (min-width: 1025px) {
+      .nav-link {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+      }
+      .logo-tagline {
+        display: none;
+      }
+    }
+
     @media (max-width: 1024px) {
-      .nav-menu, .nav-cta {
+      .hero-grid {
+        gap: 32px;
+      }
+      .nav-menu, .nav-cta, .header-wa-btn {
         display: none;
       }
       .mobile-menu-btn {
         display: block;
       }
-      .benefit-grid, .audience-grid, .portfolio-grid, .features-grid, .pricing-grid {
+      .portfolio-grid, .features-grid, .pricing-grid {
         grid-template-columns: repeat(2, 1fr);
       }
       .steps-grid {
@@ -2378,6 +2692,44 @@
       }
     }
 
+    @media (max-width: 991px) {
+      .hero {
+        padding: 50px 0 70px 0;
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .hero-text {
+        text-align: center;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+      .hero-badge-wrap {
+        justify-content: center;
+      }
+      .hero-title {
+        text-align: center;
+      }
+      .hero-desc {
+        text-align: center;
+      }
+      .hero-price-badge {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-cta-group {
+        justify-content: center;
+      }
+      .hero-keypoints {
+        justify-content: center;
+      }
+      .hero-visual {
+        max-width: 520px;
+        margin: 0 auto;
+      }
+    }
+
     @media (max-width: 768px) {
       .logo-brand {
         font-size: 1.15rem;
@@ -2388,7 +2740,7 @@
       .showcase-grid, .calc-grid {
         grid-template-columns: 1fr;
       }
-      .benefit-grid, .audience-grid, .portfolio-grid, .features-grid, .pricing-grid {
+      .portfolio-grid, .features-grid, .pricing-grid {
         grid-template-columns: 1fr;
       }
       .footer-grid {
@@ -2405,14 +2757,7 @@
         gap: 10px;
       }
       .floating-wa-btn {
-        bottom: 74px;
-        right: 16px;
-        width: 50px;
-        height: 50px;
-      }
-      .floating-wa-btn svg {
-        width: 28px;
-        height: 28px;
+        display: none !important;
       }
       body {
         padding-bottom: 60px;
@@ -2420,6 +2765,17 @@
     }
 
     @media (max-width: 520px) {
+      .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero-cta-group .btn {
+        width: 100%;
+      }
+      .hero-keypoints {
+        gap: 8px 14px;
+        justify-content: center;
+      }
       .logo-link {
         gap: 8px;
       }
@@ -2469,16 +2825,15 @@
 
       <!-- Desktop Nav Menu -->
       <ul class="nav-menu" id="desktopNav">
-        <li><a href="#beranda" class="nav-link active">Beranda</a></li>
-        <li><a href="#contoh" class="nav-link">Contoh Desain</a></li>
+        <li><a href="#beranda" class="nav-link">Beranda</a></li>
+        <li><a href="#contoh" class="nav-link">Contoh Website</a></li>
         <li><a href="#keunggulan" class="nav-link">Keunggulan</a></li>
         <li><a href="#paket" class="nav-link">Paket</a></li>
-        <li><a href="#manfaat" class="nav-link">Manfaat</a></li>
-        <li><a href="#cocok-untuk" class="nav-link">Untuk Siapa</a></li>
+        <li><a href="#tentang-solvia" class="nav-link">Tentang</a></li>
         <li><a href="#faq" class="nav-link">FAQ</a></li>
       </ul>
 
-      <!-- Nav Actions (Theme Switch Toggle & Mobile Menu) -->
+      <!-- Nav Actions (Theme Switch Toggle, WhatsApp Button & Mobile Menu) -->
       <div class="nav-actions">
         <!-- Aesthetic Theme Switch Toggle Button -->
         <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Ganti Tema Terang/Gelap" title="Ganti Tema Terang / Gelap">
@@ -2498,8 +2853,16 @@
           </svg>
         </button>
 
+        <!-- Tombol "Konsultasi WhatsApp" di Header Desktop -->
+        <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20ingin%20berkonsultasi%20mengenai%20pembuatan%20website%20untuk%20usaha%20saya." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp header-wa-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          <span>Konsultasi WhatsApp</span>
+        </a>
+
         <!-- Mobile Hamburger Button -->
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Buka Menu Navigasi">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Buka Menu Navigasi" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -2510,15 +2873,14 @@
     </div>
 
     <!-- Mobile Drawer -->
-    <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
       <ul class="mobile-nav-list">
         <li><a href="#beranda" class="mobile-nav-link">Beranda</a></li>
-        <li><a href="#contoh" class="mobile-nav-link">Contoh Desain</a></li>
+        <li><a href="#contoh" class="mobile-nav-link">Contoh Website</a></li>
         <li><a href="#keunggulan" class="mobile-nav-link">Keunggulan</a></li>
         <li><a href="#paket" class="mobile-nav-link">Pilihan Paket</a></li>
         <li><a href="#alur-kerja" class="mobile-nav-link">Cara Pesan</a></li>
-        <li><a href="#manfaat" class="mobile-nav-link">Manfaat</a></li>
-        <li><a href="#cocok-untuk" class="mobile-nav-link">Untuk Siapa</a></li>
+        <li><a href="#tentang-solvia" class="mobile-nav-link">Tentang Solvia Web</a></li>
         <li><a href="#faq" class="mobile-nav-link">Tanya Jawab (FAQ)</a></li>
       </ul>
 
@@ -2543,85 +2905,120 @@
         </button>
       </div>
 
-      <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20ingin%20konsultasi%20pembuatan%20landing%20page%20untuk%20usaha%20saya." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%;">
-        <span class="pulse-dot"></span>
-        <span>Chat WhatsApp (0811-1011-071)</span>
-      </a>
+      <div style="padding: 4px 4px 10px 4px;">
+        <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20ingin%20berkonsultasi%20mengenai%20pembuatan%20website%20untuk%20usaha%20saya." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%; justify-content: center;">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="margin-right: 6px;">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          <span>Konsultasi WhatsApp</span>
+        </a>
+      </div>
     </div>
   </header>
 
   <!-- ==========================================================================
-       HERO SECTION (FRIENDLY & APPROACHABLE)
+       HERO SECTION (TWO-COLUMN SHOWCASE)
        ========================================================================== -->
   <section class="hero" id="beranda">
     <div class="hero-glow-1"></div>
 
-    <div class="container hero-content">
-      <div class="hero-badge-wrap">
-        <div class="hero-badge">
-          <span class="pulse-dot"></span>
-          <span>Solvia Web • Jasa Pembuatan Website &amp; Landing Page</span>
-        </div>
-      </div>
-
-      <h1 class="hero-title">
-        Ingin Punya Landing Page untuk Usaha Anda?<br>
-        Kami Buatkan yang <span class="gradient-text">Menarik, Rapi, &amp; Siap Pakai!</span>
-      </h1>
-
-      <p class="hero-desc">
-        Solvia Web hadir membantu para pemilik usaha, UMKM, toko online, dan penyedia jasa memiliki landing page profesional dengan mudah. Tampilan elegan di HP, cepat diakses, dan langsung terhubung ke WhatsApp Anda. Anda terima beres dan siap pakai untuk promosi!
-      </p>
-
-      <div class="hero-cta-group">
-        <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20ingin%20dibuatkan%20landing%20page%20untuk%20usaha%20saya." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-          </svg>
-          <span>Konsultasi via WhatsApp Sekarang</span>
-        </a>
-        <a href="#paket" class="btn btn-outline">
-          <span>Lihat Pilihan Paket Harga</span>
-        </a>
-      </div>
-
-      <!-- Hero Friendly Showcase Box -->
-      <div class="hero-showcase-box">
-        <div class="showcase-grid">
-          <div>
-            <span class="showcase-badge">✨ Solusi Promosi Masa Kini</span>
-            <h3 class="showcase-title">Punya Usaha Bagus, Tampilkan dengan Landing Page yang Bagus</h3>
-            <p class="showcase-desc">
-              Saat calon pelanggan melihat promosi Anda di media sosial, mereka ingin melihat penjelasan yang jelas dan meyakinkan. Dengan landing page, produk atau jasa Anda terlihat jauh lebih terpercaya, rapi, dan mudah dipesan.
-            </p>
-            <div style="display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--gold-primary); font-size: 0.92rem;">
-              <span>✓ Pengerjaan Cepat &amp; Praktis</span>
-              <span style="color: var(--text-dim);">•</span>
-              <span>✓ Tanpa Perlu Pusing Soal Teknis</span>
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Kolom Kiri: Teks Penawaran & Aksi -->
+        <div class="hero-text">
+          <div class="hero-badge-wrap">
+            <div class="hero-badge">
+              <span class="pulse-dot"></span>
+              <span>SOLVIA WEB · JASA WEBSITE &amp; LANDING PAGE</span>
             </div>
           </div>
 
-          <div class="showcase-features-grid">
-            <div class="showcase-feature-card">
-              <span class="showcase-feature-val">Tampilan Menarik</span>
-              <span class="showcase-feature-text">Desain modern yang membuat calon pelanggan terkesan dan percaya.</span>
+          <h1 class="hero-title">
+            Website Profesional.<br>
+            <span class="gradient-text">Usaha Lebih Meyakinkan.</span>
+          </h1>
+
+          <p class="hero-desc">
+            Kami buatkan website yang menarik, rapi di HP, dan memudahkan pelanggan menghubungi Anda. Dari desain hingga siap online.
+          </p>
+
+          <div class="hero-price-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="16" height="16">
+              <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+              <line x1="7" y1="7" x2="7.01" y2="7"></line>
+            </svg>
+            <span>Mulai Rp650.000</span>
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#contoh" class="btn btn-gold">
+              <span>Lihat Contoh Website</span>
+            </a>
+            <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20ingin%20konsultasi%20pembuatan%20website%20untuk%20usaha%20saya" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+              <span>Konsultasi WhatsApp</span>
+            </a>
+          </div>
+
+          <div class="hero-keypoints">
+            <div class="hero-keypoint-item">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+              <span>Desain Responsif</span>
             </div>
-            <div class="showcase-feature-card">
-              <span class="showcase-feature-val green">Tombol WhatsApp</span>
-              <span class="showcase-feature-text">Calon pembeli tinggal klik untuk langsung chat dan order ke WA Anda.</span>
+            <span class="hero-keypoint-dot">•</span>
+            <div class="hero-keypoint-item">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+              <span>Biaya Jelas</span>
             </div>
-            <div class="showcase-feature-card">
-              <span class="showcase-feature-val green">Cepat Dibuka</span>
-              <span class="showcase-feature-text">Halaman ringan, tidak membuat calon pembeli menunggu lama.</span>
-            </div>
-            <div class="showcase-feature-card">
-              <span class="showcase-feature-val">Siap Jualan</span>
-              <span class="showcase-feature-text">Sudah online dengan nama web Anda sendiri, tinggal Anda bagikan!</span>
+            <span class="hero-keypoint-dot">•</span>
+            <div class="hero-keypoint-item">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+              <span>Pendampingan</span>
             </div>
           </div>
         </div>
+
+        <!-- Kolom Kanan: Mockup Canva Utuh -->
+        <div class="hero-visual">
+          <div class="hero-mockup-backdrop" aria-hidden="true"></div>
+          <img 
+            src="images/mockup-website-solvia.png" 
+            alt="Mockup hasil desain website Solvia Web pada laptop dan smartphone" 
+            class="hero-mockup-img"
+            width="1024" 
+            height="1024" 
+            loading="eager" 
+            fetchpriority="high"
+          >
+          <p class="hero-mockup-caption">Contoh tampilan website di laptop dan HP</p>
+        </div>
       </div>
 
+      <!-- Baris Kategori Usaha Ringkas -->
+      <div class="hero-category-strip-wrap">
+        <div class="hero-category-strip">
+          <span class="category-strip-lead">Cocok untuk:</span>
+          <span class="category-item">UMKM</span>
+          <span class="category-separator">·</span>
+          <span class="category-item">Jasa</span>
+          <span class="category-separator">·</span>
+          <span class="category-item">Kuliner</span>
+          <span class="category-separator">·</span>
+          <span class="category-item">Rental</span>
+          <span class="category-separator">·</span>
+          <span class="category-item">Toko</span>
+          <span class="category-separator">·</span>
+          <span class="category-item">Event</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -2838,66 +3235,72 @@
   </section>
 
   <!-- ==========================================================================
-       SECTION: KEUNGGULAN SOLVIA WEB (KENAPA PILIH KAMI?)
+       SECTION: KEUNGGULAN SOLVIA WEB (4 KARTU)
        ========================================================================== -->
   <section class="section" id="keunggulan">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Kenapa Pilih Kami?</span>
+        <span class="section-tag">KEUNGGULAN SOLVIA</span>
         <h2 class="section-title">
-          Keunggulan Membuat Website &amp; Landing Page di <span class="gradient-text">Solvia Web</span>
+          Mengapa Memilih <span class="gradient-text">Solvia Web?</span>
         </h2>
         <p class="section-subtitle">
-          Kami memberikan kemudahan total agar Anda bisa fokus mengelola usaha Anda, sementara kebutuhan website Anda kami siapkan dengan kualitas terbaik.
+          Website yang mendukung usaha Anda, dengan proses yang jelas dan mudah.
         </p>
       </div>
 
       <div class="features-grid">
+        <!-- Kartu 1: Desain Sesuai Karakter Usaha -->
         <div class="feature-box">
-          <div class="feature-num">01 /</div>
-          <h3 class="feature-title">Desain Menarik &amp; Terlihat Profesional</h3>
+          <div class="feature-icon-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Desain Sesuai Karakter Usaha</h3>
           <p class="feature-desc">
-            Tampilan landing page dibuat modern, bersih, dan elegan sehingga membuat siapa pun yang berkunjung langsung merasa nyaman dan percaya pada usaha Anda.
+            Tampilan dan susunan informasi disesuaikan dengan bisnis Anda agar calon pembeli langsung paham dan yakin.
           </p>
         </div>
 
+        <!-- Kartu 2: Nyaman Dibuka di HP -->
         <div class="feature-box">
-          <div class="feature-num">02 /</div>
-          <h3 class="feature-title">Pas &amp; Nyaman di Layar Smartphone (HP)</h3>
+          <div class="feature-icon-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+              <line x1="12" y1="18" x2="12.01" y2="18"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Nyaman Dibuka di HP</h3>
           <p class="feature-desc">
-            Karena sebagian besar pelanggan membuka internet lewat ponsel, halaman Anda dirancang otomatis menyesuaikan layar HP dengan rapi dan mudah dibaca.
+            Mayoritas calon pembeli mengakses lewat ponsel. Website dirancang responsif, cepat, dan mudah dibaca di layar kecil.
           </p>
         </div>
 
+        <!-- Kartu 3: Pelanggan Mudah Menghubungi -->
         <div class="feature-box">
-          <div class="feature-num">03 /</div>
-          <h3 class="feature-title">Cepat Dibuka Tanpa Loading Lama</h3>
+          <div class="feature-icon-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Pelanggan Mudah Menghubungi</h3>
           <p class="feature-desc">
-            Dibuat dengan halaman yang ringan dan cepat diakses, sehingga calon pembeli tidak bosan menunggu dan langsung bisa melihat produk yang Anda tawarkan.
+            Tombol WhatsApp dan alur tindakan ditempatkan strategis agar pengunjung dapat langsung bertanya atau memesan.
           </p>
         </div>
 
+        <!-- Kartu 4: Dibantu hingga Siap Online -->
         <div class="feature-box">
-          <div class="feature-num">04 /</div>
-          <h3 class="feature-title">Bisa Dibantu Susun Kata-Kata Promosinya</h3>
+          <div class="feature-icon-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Dibantu hingga Siap Online</h3>
           <p class="feature-desc">
-            Belum punya tulisan promosi yang rapi? Tidak masalah! Anda cukup ceritakan poin produk Anda, dan tim kami yang akan menyusun kalimat penawarannya.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <div class="feature-num">05 /</div>
-          <h3 class="feature-title">Terima Beres Termasuk Domain &amp; Server</h3>
-          <p class="feature-desc">
-            Sudah termasuk nama domain pilihan (.com / .id / .my.id) dan server online 1 tahun penuh. Anda tidak perlu pusing membeli hosting secara terpisah.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <div class="feature-num">06 /</div>
-          <h3 class="feature-title">Pelayanan Ramah &amp; Pendampingan</h3>
-          <p class="feature-desc">
-            Konsultasi santai dan transparan melalui WhatsApp. Kami siap memandu Anda hingga landing page Anda benar-benar online dan siap digunakan untuk jualan.
+            Mulai dari penataan konten, domain, hosting, hingga panduan penggunaan didampingi sampai website siap digunakan.
           </p>
         </div>
       </div>
@@ -3061,138 +3464,135 @@
   </section>
 
   <!-- ==========================================================================
-       SECTION: MANFAAT LANDING PAGE UNTUK USAHA
+       SECTION: TENTANG SOLVIA WEB
        ========================================================================== -->
-  <section class="section section-darker" id="manfaat">
+  <section class="section section-darker" id="tentang-solvia">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Manfaat Untuk Usaha Anda</span>
-        <h2 class="section-title">
-          Mengapa Usaha Anda Sangat Perlu <span class="gradient-text">Memiliki Landing Page?</span>
-        </h2>
+      <div class="about-grid">
+        <!-- Kolom Kiri: Narasi & Sorotan Singkat (~55%) -->
+        <div class="about-narrative">
+          <span class="section-tag">TENTANG SOLVIA WEB</span>
+          <h2 class="section-title">
+            Keahlian IT, Pendekatan Personal <span class="gradient-text">untuk Usaha Anda.</span>
+          </h2>
+          <p class="about-text">
+            Solvia Web dirintis oleh praktisi IT dengan pengalaman bekerja di sektor perbankan swasta. Pengalaman dalam implementasi teknologi, dukungan operasional, dan koordinasi pekerjaan IT menjadi bekal untuk menjalankan setiap proyek secara terarah, teliti, dan bertanggung jawab.
+          </p>
+          <p class="about-text">
+            Kami memahami bahwa pemilik usaha membutuhkan website yang menarik sekaligus jelas manfaatnya. Karena itu, proses dimulai dengan mengenali usaha Anda: siapa pelanggannya, apa yang ditawarkan, dan bagaimana website dapat memudahkan mereka mengambil langkah berikutnya.
+          </p>
+          <p class="about-text">
+            Anda tidak harus memahami coding atau istilah teknis. Solvia membantu menjelaskan pilihan, menyepakati ruang lingkup pekerjaan, dan menyiapkan website sesuai kebutuhan. Anda tetap dilibatkan saat meninjau hasil, sehingga mengetahui apa yang dikerjakan dan apa yang akan diterima.
+          </p>
+          <div class="about-highlight-card">
+            <div class="about-highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+            </div>
+            <p class="about-highlight-text">
+              “Usaha Anda punya cerita dan nilai. Kami membantu menampilkannya dengan jelas dan profesional.”
+            </p>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Empat Poin Kepercayaan (~45%) -->
+        <div class="about-trust-panel">
+          <div class="trust-item">
+            <div class="trust-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="4"></circle>
+                <line x1="12" y1="2" x2="12" y2="4"></line>
+                <line x1="12" y1="20" x2="12" y2="22"></line>
+                <line x1="2" y1="12" x2="4" y2="12"></line>
+                <line x1="20" y1="12" x2="22" y2="12"></line>
+              </svg>
+            </div>
+            <div class="trust-content">
+              <h3 class="trust-title">Memahami Sebelum Mendesain</h3>
+              <p class="trust-desc">
+                Kebutuhan, target pelanggan, dan karakter usaha menjadi dasar penyusunan website Anda.
+              </p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <path d="M9 15l2 2 4-4"></path>
+              </svg>
+            </div>
+            <div class="trust-content">
+              <h3 class="trust-title">Lingkup dan Biaya Disepakati</h3>
+              <p class="trust-desc">
+                Fitur, biaya, jadwal, serta ketentuan revisi dijelaskan sebelum pengerjaan dimulai.
+              </p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+                <path d="M9 10l2 2 4-4"></path>
+              </svg>
+            </div>
+            <div class="trust-content">
+              <h3 class="trust-title">Hasil Ditinjau Bersama</h3>
+              <p class="trust-desc">
+                Anda dapat memeriksa tampilan, informasi, dan fungsi website sebelum penyerahan sesuai kesepakatan.
+              </p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M9 12l2 2 4-4"></path>
+              </svg>
+            </div>
+            <div class="trust-content">
+              <h3 class="trust-title">Penyerahan yang Jelas</h3>
+              <p class="trust-desc">
+                Penjelasan penggunaan, akses yang diserahkan, serta ketentuan bantuan dan perpanjangan dibahas sesuai paket.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="benefit-grid">
-        <!-- Benefit 1 -->
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-          </div>
-          <h3 class="benefit-title">Usaha Terlihat Lebih Terpercaya</h3>
-          <p class="benefit-desc">
-            Pelanggan masa kini lebih yakin bertransaksi dengan bisnis yang memiliki halaman resmi sendiri dibanding yang hanya promosi lewat chat biasa.
+      <!-- Ajakan Konsultasi -->
+      <div class="about-cta-box">
+        <div class="about-cta-content">
+          <h3 class="about-cta-title">Mari Kenali Kebutuhan Website Anda.</h3>
+          <p class="about-cta-desc">
+            Ceritakan usaha, rencana, dan anggaran Anda. Solvia membantu menentukan pilihan website yang sesuai.
           </p>
         </div>
-
-        <!-- Benefit 2 -->
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-              <line x1="8" y1="21" x2="16" y2="21"></line>
-              <line x1="12" y1="17" x2="12" y2="21"></line>
+        <div class="about-cta-actions">
+          <a 
+            href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20ingin%20berkonsultasi%20tentang%20website%20yang%20sesuai%20untuk%20usaha%20saya" 
+            class="btn btn-gold" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="margin-right: 6px;">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
             </svg>
-          </div>
-          <h3 class="benefit-title">Penjelasan Produk Jauh Lebih Jelas</h3>
-          <p class="benefit-desc">
-            Foto produk, daftar harga, keunggulan, ulasan pelanggan, dan promo bisa dilihat lengkap di satu halaman tanpa perlu bolak-balik kirim foto di chat.
-          </p>
-        </div>
-
-        <!-- Benefit 3 -->
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            <span>Ceritakan Kebutuhan Anda</span>
+          </a>
+          <a href="#contoh" class="about-cta-secondary-link">
+            <span>Lihat Hasil Karya Solvia</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
-          </div>
-          <h3 class="benefit-title">Calon Pembeli Langsung Masuk WhatsApp</h3>
-          <p class="benefit-desc">
-            Ada tombol pesan WhatsApp yang jelas dan mudah diklik. Begitu pembeli tertarik, mereka langsung terhubung dengan Anda untuk menyelesaikan pesanan.
-          </p>
-        </div>
-
-        <!-- Benefit 4 -->
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
-          </div>
-          <h3 class="benefit-title">Bekerja 24 Jam Nonstop</h3>
-          <p class="benefit-desc">
-            Kapan pun calon pelanggan menemukan link Anda (pagi, siang, atau tengah malam), mereka tetap bisa mempelajari penawaran Anda dengan santai.
-          </p>
-        </div>
-
-        <!-- Benefit 5 -->
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="18" cy="5" r="3"></circle>
-              <circle cx="6" cy="12" r="3"></circle>
-              <circle cx="18" cy="19" r="3"></circle>
-              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-            </svg>
-          </div>
-          <h3 class="benefit-title">Mudah Dibagikan ke Mana Saja</h3>
-          <p class="benefit-desc">
-            Cukup cantumkan 1 link web Anda di bio Instagram, status WhatsApp, profil TikTok, postingan Facebook, hingga kartu nama dan brosur usaha.
-          </p>
-        </div>
-
-        <!-- Benefit 6 -->
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10 9 9 9 8 9"></polyline>
-            </svg>
-          </div>
-          <h3 class="benefit-title">Efektif &amp; Hemat Biaya</h3>
-          <p class="benefit-desc">
-            Biaya pembuatan yang sangat terjangkau dibanding membuka toko fisik, namun manfaatnya bisa digunakan jangka panjang untuk memajukan usaha Anda.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       SECTION: COCOK UNTUK SIAPA SAJA?
-       ========================================================================== -->
-  <section class="section" id="cocok-untuk">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Siapa Saja yang Cocok?</span>
-        <h2 class="section-title">
-          Sangat Cocok untuk Anda yang <span class="gradient-text">Ingin Dibuatkan Landing Page</span>
-        </h2>
-        <p class="section-subtitle">
-          Apapun bidang usaha yang sedang Anda jalankan, kami siap membantu membuatkan landing page yang sesuai dan pas dengan kebutuhan Anda.
-        </p>
-      </div>
-
-      <div class="category-strip-wrap">
-        <div class="category-strip">
-          <span class="category-item">UMKM</span>
-          <span class="category-separator">·</span>
-          <span class="category-item">Jasa</span>
-          <span class="category-separator">·</span>
-          <span class="category-item">Kuliner</span>
-          <span class="category-separator">·</span>
-          <span class="category-item">Rental</span>
-          <span class="category-separator">·</span>
-          <span class="category-item">Toko</span>
-          <span class="category-separator">·</span>
-          <span class="category-item">Event</span>
+          </a>
         </div>
       </div>
     </div>
@@ -3201,7 +3601,7 @@
   <!-- ==========================================================================
        SECTION: FAQ (PERTANYAAN UMUM)
        ========================================================================== -->
-  <section class="section section-darker" id="faq">
+  <section class="section" id="faq">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Tanya Jawab</span>
@@ -3214,69 +3614,153 @@
       </div>
 
       <div class="faq-wrapper">
-        <!-- FAQ 1 -->
+        <!-- FAQ 1: Perbedaan Website dan Landing Page -->
         <div class="faq-item active">
-          <div class="faq-question">
-            <span>Apa itu landing page dan apa bedanya dengan website biasa?</span>
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </div>
-          <div class="faq-answer">
-            Landing page adalah halaman web satu halaman yang fokus menjelaskan produk atau jasa Anda secara lengkap dari atas ke bawah, lalu langsung mengajak calon pelanggan untuk menghubungi Anda via WhatsApp. Berbeda dengan website biasa yang punya banyak menu dan bisa membingungkan, landing page jauh lebih praktis dan memudahkan orang untuk langsung membeli.
-          </div>
-        </div>
-
-        <!-- FAQ 2 -->
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Apakah saya harus mengerti soal coding atau teknis komputer?</span>
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </div>
-          <div class="faq-answer">
-            Sama sekali tidak perlu! Semua proses teknis mulai dari pendaftaran nama web (domain), penyiapan server online (hosting), desain tampilan, hingga pengaturan tombol chat kami yang kerjakan sampai jadi dan siap pakai.
+          <button type="button" class="faq-question" id="faq-btn-1" aria-expanded="true" aria-controls="faq-ans-1">
+            <span class="faq-q-text">Apa perbedaan website dan landing page?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1">
+            <p class="faq-ans-text">
+              Website adalah keseluruhan situs yang dapat terdiri dari satu atau beberapa halaman. Landing page adalah halaman yang berfokus pada satu penawaran dan mengarahkan pengunjung melakukan tindakan tertentu, misalnya menghubungi WhatsApp. Landing page bisa berdiri sendiri sebagai website satu halaman atau menjadi bagian dari website yang lebih besar. Solvia membantu memilih bentuk yang sesuai dengan kebutuhan usaha Anda.
+            </p>
           </div>
         </div>
 
-        <!-- FAQ 3 -->
+        <!-- FAQ 2: Pengetahuan Coding / Teknis -->
         <div class="faq-item">
-          <div class="faq-question">
-            <span>Bagaimana jika saya belum punya kata-kata promosi atau tulisan yang bagus?</span>
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </div>
-          <div class="faq-answer">
-            Tenang saja! Anda cukup ceritakan poin produk Anda lewat chat WhatsApp. Tim kami siap membantu menyusun kalimat penawaran yang rapi, menarik, dan mudah dipahami oleh calon pembeli Anda.
+          <button type="button" class="faq-question" id="faq-btn-2" aria-expanded="false" aria-controls="faq-ans-2">
+            <span class="faq-q-text">Apakah saya harus mengerti soal coding atau teknis website?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2">
+            <p class="faq-ans-text">
+              Tidak perlu. Seluruh proses teknis mulai dari pendaftaran nama domain, penyiapan server hosting, perancangan desain tampilan responsif, hingga pengaturan tombol pesan WhatsApp kami tangani sepenuhnya sampai website siap digunakan.
+            </p>
           </div>
         </div>
 
-        <!-- FAQ 4 -->
+        <!-- FAQ 3: Bantuan Teks Promosi -->
         <div class="faq-item">
-          <div class="faq-question">
-            <span>Apakah biayanya sudah termasuk nama web (domain) dan server (hosting)?</span>
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </div>
-          <div class="faq-answer">
-            Ya, semua paket di Solvia Web sudah lengkap terima beres. Anda sudah mendapatkan nama web pilihan Anda sendiri (.com / .id / .my.id) dan server online selama 1 tahun penuh tanpa biaya tambahan tersembunyi.
+          <button type="button" class="faq-question" id="faq-btn-3" aria-expanded="false" aria-controls="faq-ans-3">
+            <span class="faq-q-text">Bagaimana jika saya belum memiliki materi tulisan atau kata-kata promosi?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3">
+            <p class="faq-ans-text">
+              Bantuan teks promosi tersedia sesuai paket yang dipilih (termasuk pada Paket Populer dan Paket Bisnis Eksklusif). Anda cukup menceritakan poin produk atau jasa Anda, dan tim Solvia akan membantu menyusun kalimat penawaran yang rapi, menarik, serta mudah dipahami calon pembeli.
+            </p>
           </div>
         </div>
 
-        <!-- FAQ 5 -->
+        <!-- FAQ 4: Domain dan Hosting yang Termasuk -->
         <div class="faq-item">
-          <div class="faq-question">
-            <span>Berapa lama proses pembuatannya sampai selesai?</span>
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </div>
-          <div class="faq-answer">
-            Proses pembuatan sangat cepat, biasanya berkisar antara 2 sampai 4 hari kerja setelah data usaha atau produk Anda kami terima. Jika Anda butuh selesai lebih cepat, kami juga menyediakan layanan pengerjaan kilat.
+          <button type="button" class="faq-question" id="faq-btn-4" aria-expanded="false" aria-controls="faq-ans-4">
+            <span class="faq-q-text">Apakah biaya pembuatan sudah termasuk domain dan hosting?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4">
+            <p class="faq-ans-text">
+              Ya, seluruh paket di Solvia Web sudah mencakup domain dan hosting untuk tahun pertama. Pilihan nama serta ekstensi domain mengikuti paket yang dipilih, ketersediaan nama domain, serta ketentuan dalam penawaran tertulis.
+            </p>
           </div>
         </div>
 
-        <!-- FAQ 6 -->
+        <!-- FAQ 5: Biaya Setelah Tahun Pertama -->
         <div class="faq-item">
-          <div class="faq-question">
-            <span>Bagaimana calon pembeli menghubungi saya setelah melihat landing page?</span>
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          <button type="button" class="faq-question" id="faq-btn-5" aria-expanded="false" aria-controls="faq-ans-5">
+            <span class="faq-q-text">Apakah ada biaya setelah tahun pertama?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5">
+            <p class="faq-ans-text">
+              Paket mencakup domain dan hosting untuk tahun pertama sesuai penawaran. Setelah periode tersebut, biaya perpanjangan mengikuti domain dan layanan hosting yang digunakan. Pilihan layanan, biaya perpanjangan, dan pekerjaan tambahan seperti pembaruan konten akan dijelaskan agar Anda mengetahui biaya yang perlu disiapkan.
+            </p>
           </div>
-          <div class="faq-answer">
-            Di landing page akan tersedia tombol WhatsApp yang jelas. Begitu calon pembeli mengklik tombol tersebut, aplikasi WhatsApp mereka akan langsung terbuka dan mengirim pesan langsung ke nomor Anda dengan kalimat pemesanan yang sudah rapi.
+        </div>
+
+        <!-- FAQ 6: Estimasi Waktu Pengerjaan -->
+        <div class="faq-item">
+          <button type="button" class="faq-question" id="faq-btn-6" aria-expanded="false" aria-controls="faq-ans-6">
+            <span class="faq-q-text">Berapa lama estimasi waktu pengerjaan website?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-6" role="region" aria-labelledby="faq-btn-6">
+            <p class="faq-ans-text">
+              Estimasi waktu pengerjaan diselaraskan dengan paket yang dipilih: 2–3 hari kerja untuk Paket Praktis, 3–5 hari kerja untuk Paket Populer, dan 5–8 hari kerja untuk Paket Bisnis Eksklusif. Waktu pengerjaan dihitung setelah seluruh data dan materi usaha Anda lengkap serta jadwal pengerjaan disepakati bersama.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 7: Batas Revisi -->
+        <div class="faq-item">
+          <button type="button" class="faq-question" id="faq-btn-7" aria-expanded="false" aria-controls="faq-ans-7">
+            <span class="faq-q-text">Berapa kali saya bisa meminta revisi?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-7" role="region" aria-labelledby="faq-btn-7">
+            <p class="faq-ans-text">
+              Jumlah putaran revisi dan jenis perubahan yang termasuk akan dijelaskan dalam penawaran sebelum pengerjaan dimulai. Penambahan halaman, fitur, atau perubahan konsep di luar kesepakatan awal akan dibicarakan terlebih dahulu, termasuk pengaruhnya terhadap biaya dan waktu pengerjaan.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 8: Kepemilikan Domain dan Akses -->
+        <div class="faq-item">
+          <button type="button" class="faq-question" id="faq-btn-8" aria-expanded="false" aria-controls="faq-ans-8">
+            <span class="faq-q-text">Apakah domain dan akses website akan diserahkan kepada saya?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-8" role="region" aria-labelledby="faq-btn-8">
+            <p class="faq-ans-text">
+              Pengaturan kepemilikan domain serta akses yang diserahkan akan dijelaskan dalam penawaran sebelum pengerjaan. Saat penyerahan, Anda menerima rincian akses sesuai kesepakatan, termasuk cara mengelola domain dan website serta ketentuan perpanjangannya.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 9: Pembaruan Foto, Harga, dan Tulisan -->
+        <div class="faq-item">
+          <button type="button" class="faq-question" id="faq-btn-9" aria-expanded="false" aria-controls="faq-ans-9">
+            <span class="faq-q-text">Apakah saya bisa mengganti foto, harga, atau tulisan setelah website selesai?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-9" role="region" aria-labelledby="faq-btn-9">
+            <p class="faq-ans-text">
+              Bisa. Cara pembaruan bergantung pada sistem dan paket yang dipilih. Website berbasis file dapat diperbarui dengan mengikuti panduan pengeditan, sedangkan panel admin hanya tersedia jika termasuk dalam penawaran. Jika ingin dibantu Solvia, cakupan pekerjaan dan biayanya dapat dikonsultasikan terlebih dahulu.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 10: Cara Menghubungi via WhatsApp -->
+        <div class="faq-item">
+          <button type="button" class="faq-question" id="faq-btn-10" aria-expanded="false" aria-controls="faq-ans-10">
+            <span class="faq-q-text">Bagaimana calon pelanggan menghubungi saya melalui website?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-10" role="region" aria-labelledby="faq-btn-10">
+            <p class="faq-ans-text">
+              Website dilengkapi tombol yang mengarahkan pengunjung ke WhatsApp Anda. Saat diklik, pengunjung dapat membuka percakapan dengan teks pesan yang sudah disiapkan. Pengunjung tetap perlu menekan tombol Kirim untuk mengirimkan pesan. Nomor tujuan dan isi pesan disesuaikan dengan kebutuhan usaha Anda.
+            </p>
           </div>
         </div>
       </div>
@@ -3286,7 +3770,7 @@
   <!-- ==========================================================================
        FINAL CTA BANNER
        ========================================================================== -->
-  <section class="section">
+  <section class="section section-darker">
     <div class="container">
       <div class="cta-banner">
         <h2 class="cta-banner-title">
@@ -3340,12 +3824,12 @@
         <div>
           <h4 class="footer-col-title">Cocok Untuk</h4>
           <ul class="footer-links-list">
-            <li><a href="#cocok-untuk" class="footer-link">Toko Online &amp; Produk</a></li>
-            <li><a href="#cocok-untuk" class="footer-link">Bisnis Jasa &amp; Layanan</a></li>
-            <li><a href="#cocok-untuk" class="footer-link">Kuliner &amp; Makanan</a></li>
-            <li><a href="#cocok-untuk" class="footer-link">UMKM &amp; Usaha Baru</a></li>
-            <li><a href="#cocok-untuk" class="footer-link">Event &amp; Pendaftaran</a></li>
-            <li><a href="#cocok-untuk" class="footer-link">Semua Pemilik Usaha</a></li>
+            <li><span class="footer-text-item">Toko Online &amp; Produk</span></li>
+            <li><span class="footer-text-item">Bisnis Jasa &amp; Layanan</span></li>
+            <li><span class="footer-text-item">Kuliner &amp; Makanan</span></li>
+            <li><span class="footer-text-item">UMKM &amp; Usaha Baru</span></li>
+            <li><span class="footer-text-item">Event &amp; Pendaftaran</span></li>
+            <li><span class="footer-text-item">Semua Pemilik Usaha</span></li>
           </ul>
         </div>
 
@@ -3358,8 +3842,7 @@
             <li><a href="#keunggulan" class="footer-link">Keunggulan Kami</a></li>
             <li><a href="#paket" class="footer-link">Pilihan Paket Harga</a></li>
             <li><a href="#alur-kerja" class="footer-link">Cara Pesan</a></li>
-            <li><a href="#manfaat" class="footer-link">Manfaat Landing Page</a></li>
-            <li><a href="#cocok-untuk" class="footer-link">Untuk Siapa</a></li>
+            <li><a href="#tentang-solvia" class="footer-link">Tentang Solvia Web</a></li>
             <li><a href="#faq" class="footer-link">Tanya Jawab (FAQ)</a></li>
           </ul>
         </div>
@@ -3459,53 +3942,185 @@
       const mobileDrawer = document.getElementById('mobileDrawer');
       const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
+      function toggleMobileDrawer(open) {
+        if (!mobileDrawer) return;
+        const isOpen = (typeof open === 'boolean') ? open : !mobileDrawer.classList.contains('open');
+        mobileDrawer.classList.toggle('open', isOpen);
+        mobileDrawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        if (mobileBtn) {
+          mobileBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+      }
+
       if (mobileBtn && mobileDrawer) {
         mobileBtn.addEventListener('click', function () {
-          mobileDrawer.classList.toggle('open');
+          toggleMobileDrawer();
         });
 
-        mobileLinks.forEach(function (link) {
-          link.addEventListener('click', function () {
-            mobileDrawer.classList.remove('open');
-          });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
+            toggleMobileDrawer(false);
+          }
         });
       }
 
-      // 4. Smooth Nav Link Active State on Scroll
-      const sections = document.querySelectorAll('section[id]');
+      // 4. Smooth Nav Link Active State on Scroll & Click
       const navLinks = document.querySelectorAll('.nav-link');
 
-      window.addEventListener('scroll', function () {
-        let current = '';
-        const scrollY = window.pageYOffset;
+      // Sections corresponding to navigation
+      const navSections = [
+        document.getElementById('beranda'),
+        document.getElementById('contoh'),
+        document.getElementById('keunggulan'),
+        document.getElementById('paket'),
+        document.getElementById('alur-kerja'),
+        document.getElementById('tentang-solvia'),
+        document.getElementById('faq')
+      ].filter(Boolean);
 
-        sections.forEach(function (section) {
-          const sectionTop = section.offsetTop - 120;
-          const sectionHeight = section.offsetHeight;
-          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
+      let isClickScrolling = false;
+      let scrollTimeout = null;
+
+      function setActiveNav(targetId) {
+        if (!targetId) return;
+
+        // Map section 'alur-kerja' to 'paket' for desktop nav since 'alur-kerja' is part of order workflow
+        const desktopTargetId = (targetId === 'alur-kerja') ? 'paket' : targetId;
+
+        navLinks.forEach(function (link) {
+          const href = link.getAttribute('href');
+          if (href === '#' + desktopTargetId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
           }
         });
 
-        navLinks.forEach(function (link) {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + current) {
+        mobileLinks.forEach(function (link) {
+          const href = link.getAttribute('href');
+          if (href === '#' + targetId || (targetId === 'alur-kerja' && href === '#alur-kerja') || (href === '#' + desktopTargetId)) {
             link.classList.add('active');
+          } else {
+            link.classList.remove('active');
           }
+        });
+      }
+
+      function updateActiveOnScroll() {
+        if (isClickScrolling) return;
+
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+        const windowHeight = window.innerHeight;
+        const documentHeight = Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight,
+          document.body.offsetHeight,
+          document.documentElement.offsetHeight
+        );
+
+        // If user is near the top of the page, activate Beranda
+        if (scrollY < 80) {
+          setActiveNav('beranda');
+          return;
+        }
+
+        // If user is near the very bottom of the page, highlight FAQ
+        if (scrollY + windowHeight >= documentHeight - 80) {
+          setActiveNav('faq');
+          return;
+        }
+
+        // Header offset threshold
+        const headerEl = document.getElementById('header');
+        const headerHeight = headerEl ? headerEl.offsetHeight : 74;
+        const checkLine = headerHeight + 50;
+        let currentId = 'beranda';
+
+        for (let i = 0; i < navSections.length; i++) {
+          const section = navSections[i];
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= checkLine) {
+            currentId = section.getAttribute('id');
+          }
+        }
+
+        setActiveNav(currentId);
+      }
+
+      // Smooth click handling for nav links
+      function handleNavClick(e) {
+        const href = this.getAttribute('href');
+        if (!href || !href.startsWith('#')) return;
+
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          e.preventDefault();
+
+          // Immediately set active state on the clicked link
+          setActiveNav(targetId);
+
+          const headerEl = document.getElementById('header');
+          const headerHeight = headerEl ? headerEl.offsetHeight : 74;
+          const elementPos = targetElement.getBoundingClientRect().top;
+          const targetTop = elementPos + window.pageYOffset - headerHeight + 2;
+
+          // Lock scrollspy update while smooth scrolling
+          isClickScrolling = true;
+
+          window.scrollTo({
+            top: Math.max(0, targetTop),
+            behavior: 'smooth'
+          });
+
+          if (scrollTimeout) clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(function () {
+            isClickScrolling = false;
+          }, 850);
+        }
+      }
+
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', handleNavClick);
+      });
+
+      mobileLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          handleNavClick.call(this, e);
+          toggleMobileDrawer(false);
         });
       });
 
-      // 5. Accordion FAQ
+      window.addEventListener('scroll', updateActiveOnScroll, { passive: true });
+      window.addEventListener('resize', updateActiveOnScroll, { passive: true });
+      // Initialize active state on load
+      updateActiveOnScroll();
+
+      // 5. Accordion FAQ (Accessible Button Toggle & aria-expanded Synchronization)
       const faqItems = document.querySelectorAll('.faq-item');
       faqItems.forEach(function (item) {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', function () {
+        const questionBtn = item.querySelector('.faq-question');
+        if (!questionBtn) return;
+
+        questionBtn.addEventListener('click', function () {
           const isActive = item.classList.contains('active');
+
+          // Close all accordion items
           faqItems.forEach(function (other) {
             other.classList.remove('active');
+            const otherBtn = other.querySelector('.faq-question');
+            if (otherBtn) {
+              otherBtn.setAttribute('aria-expanded', 'false');
+            }
           });
+
+          // Toggle clicked item
           if (!isActive) {
             item.classList.add('active');
+            questionBtn.setAttribute('aria-expanded', 'true');
+          } else {
+            questionBtn.setAttribute('aria-expanded', 'false');
           }
         });
       });
