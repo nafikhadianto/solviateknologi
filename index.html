@@ -1321,6 +1321,61 @@
       margin-top: 2px;
     }
 
+    /* Catatan Ketentuan Paket */
+    .pricing-terms-box {
+      margin-top: 36px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: var(--transition);
+    }
+
+    .pricing-terms-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .pricing-terms-icon {
+      width: 18px;
+      height: 18px;
+      color: var(--gold-primary);
+      flex-shrink: 0;
+    }
+
+    .pricing-terms-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin: 0;
+    }
+
+    .pricing-terms-desc {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    @media (max-width: 640px) {
+      .pricing-terms-box {
+        margin-top: 26px;
+        padding: 16px 18px;
+      }
+      .pricing-terms-title {
+        font-size: 0.9rem;
+      }
+      .pricing-terms-desc {
+        font-size: 0.84rem;
+        line-height: 1.6;
+      }
+    }
+
     /* ==========================================================================
        SECTION: ESTIMATOR KEBUTUHAN (SIMULASI SEDERHANA)
        ========================================================================== --> */
@@ -2013,6 +2068,14 @@
       margin-top: 2px;
     }
 
+    .footer-response-note {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.8rem;
+      line-height: 1.45;
+      color: var(--text-muted);
+    }
+
     .footer-bottom {
       border-top: 1px solid var(--border-color);
       padding-top: 24px;
@@ -2087,7 +2150,7 @@
        ========================================================================== --> */
     /* Transition for Smooth Theme Switching */
     body, .header, .portfolio-card, 
-    .feature-box, .pricing-card, .step-card, .calc-container, 
+    .feature-box, .pricing-card, .pricing-terms-box, .step-card, .calc-container, 
     .calc-radio-card, .calc-check-item, .calc-summary-card, 
     .faq-item, .cta-banner, .footer, .mobile-drawer, .logo-badge {
       transition: background-color 0.3s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
@@ -2371,6 +2434,24 @@
 
     [data-theme="light"] .pricing-feature-item svg {
       color: #15803D;
+    }
+
+    [data-theme="light"] .pricing-terms-box {
+      background: #FFFFFF;
+      border-color: rgba(15, 23, 42, 0.1);
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    }
+
+    [data-theme="light"] .pricing-terms-title {
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .pricing-terms-desc {
+      color: #475569;
+    }
+
+    [data-theme="light"] .pricing-terms-icon {
+      color: #85580C;
     }
 
     /* 9. Calculator & Interactive Elements */
@@ -2990,7 +3071,7 @@
         <div class="hero-visual">
           <div class="hero-mockup-backdrop" aria-hidden="true"></div>
           <img 
-            src="images/mockup-website-solvia.png" 
+            src="images/mockup-website-solvia.webp" 
             alt="Mockup hasil desain website Solvia Web pada laptop dan smartphone" 
             class="hero-mockup-img"
             width="1024" 
@@ -3058,7 +3139,7 @@
 
           <!-- Preview Screenshot Nadi Sehat -->
           <a href="https://nadisehat.my.id" target="_blank" rel="noopener noreferrer" class="portfolio-preview-wrap" aria-label="Lihat Website Apotek Nadi Sehat">
-            <img src="images/ss-nadisehat.png" alt="Tampilan Landing Page Apotek Nadi Sehat" class="portfolio-preview-img" loading="lazy">
+            <img src="images/ss-nadisehat.webp" alt="Tampilan Landing Page Apotek Nadi Sehat" class="portfolio-preview-img" width="2830" height="1542" loading="lazy" decoding="async">
             <div class="portfolio-preview-overlay">
               <span class="portfolio-preview-hint">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15">
@@ -3123,7 +3204,7 @@
 
           <!-- Preview Screenshot Bharata Trans -->
           <a href="https://nafikhadianto.github.io/bharatatrans/" target="_blank" rel="noopener noreferrer" class="portfolio-preview-wrap" aria-label="Lihat Demo Website Bharata Trans">
-            <img src="images/ss-bharata.png" alt="Tampilan Landing Page Bharata Trans" class="portfolio-preview-img" loading="lazy">
+            <img src="images/ss-bharata.webp" alt="Tampilan Landing Page Bharata Trans" class="portfolio-preview-img" width="2830" height="1548" loading="lazy" decoding="async">
             <div class="portfolio-preview-overlay">
               <span class="portfolio-preview-hint">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15">
@@ -3188,7 +3269,7 @@
 
           <!-- Preview Screenshot AIO IT Solution -->
           <a href="https://nafikhadianto.github.io/AIOSolution/" target="_blank" rel="noopener noreferrer" class="portfolio-preview-wrap" aria-label="Lihat Demo Website AIO IT Solution">
-            <img src="images/ss-aio-solution.png" alt="Tampilan Landing Page AIO IT Solution" class="portfolio-preview-img" loading="lazy">
+            <img src="images/ss-aio-solution.webp" alt="Tampilan Landing Page AIO IT Solution" class="portfolio-preview-img" width="2726" height="1546" loading="lazy" decoding="async">
             <div class="portfolio-preview-overlay">
               <span class="portfolio-preview-hint">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15">
@@ -3315,10 +3396,10 @@
       <div class="section-header">
         <span class="section-tag">Pilihan Paket</span>
         <h2 class="section-title">
-          Pilihan Paket Landing Page yang <span class="gradient-text">Pas untuk Usaha Anda</span>
+          Pilihan Paket Website &amp; Landing Page <span class="gradient-text">untuk Usaha Anda</span>
         </h2>
         <p class="section-subtitle">
-          Biaya transparan dan terjangkau untuk memiliki aset promosi digital jangka panjang. Pilih paket yang paling cocok dengan tahap usaha Anda saat ini.
+          Pilih paket sesuai kebutuhan usaha Anda. Fitur, biaya, dan lingkup pengerjaan dijelaskan sebelum pekerjaan dimulai.
         </p>
       </div>
 
@@ -3329,7 +3410,7 @@
           <p class="pricing-desc">Pilihan hemat dan tepat untuk mulai memperkenalkan usaha atau produk Anda secara resmi di internet.</p>
           <div class="pricing-price-wrap">
             <div class="pricing-price">Rp 650.000</div>
-            <div class="pricing-note">Estimasi 2-3 hari</div>
+            <div class="pricing-note">Estimasi 2-3 hari kerja</div>
           </div>
           <div class="pricing-features">
             <div class="pricing-feature-item">
@@ -3346,7 +3427,7 @@
             </div>
             <div class="pricing-feature-item">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <span>Domain &amp; Hosting tahun pertama**</span>
+              <span>Domain &amp; Hosting Tahun Pertama</span>
             </div>
           </div>
           <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20tertarik%20dengan%20Paket%20Praktis%20(Rp%20650.000)." target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%;">
@@ -3356,12 +3437,12 @@
 
         <!-- Paket 2: Populer (Featured) -->
         <div class="pricing-card featured">
-          <span class="pricing-badge-popular">★ PALING BANYAK DIPILIH USAHA</span>
+          <span class="pricing-badge-popular">REKOMENDASI SOLVIA</span>
           <h3 class="pricing-name">Paket Populer</h3>
           <p class="pricing-desc">Pilihan terbaik dan paling lengkap untuk pemilik usaha yang ingin tampilan promosi lebih maksimal dan menarik pembeli.</p>
           <div class="pricing-price-wrap">
             <div class="pricing-price gold">Rp 1.250.000</div>
-            <div class="pricing-note">Estimasi 3-5 hari</div>
+            <div class="pricing-note">Estimasi 3-5 hari kerja</div>
           </div>
           <div class="pricing-features">
             <div class="pricing-feature-item">
@@ -3392,7 +3473,7 @@
           <p class="pricing-desc">Cocok untuk perusahaan, brand berkembang, atau usaha dengan banyak kategori produk dan layanan khusus.</p>
           <div class="pricing-price-wrap">
             <div class="pricing-price">Rp 2.450.000</div>
-            <div class="pricing-note">Estimasi 5-8 hari</div>
+            <div class="pricing-note">Estimasi 5-8 hari kerja</div>
           </div>
           <div class="pricing-features">
             <div class="pricing-feature-item">
@@ -3417,6 +3498,21 @@
           </a>
         </div>
       </div>
+
+      <!-- Blok Catatan Ketentuan Paket -->
+      <div class="pricing-terms-box">
+        <div class="pricing-terms-header">
+          <svg class="pricing-terms-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <h4 class="pricing-terms-title">Ketentuan Paket</h4>
+        </div>
+        <p class="pricing-terms-desc">
+          Domain dan hosting termasuk untuk tahun pertama sesuai paket. Pilihan domain, biaya perpanjangan tahun berikutnya, batas revisi, dan ketentuan bantuan dijelaskan dalam penawaran sebelum pengerjaan. Estimasi dihitung dalam hari kerja setelah materi lengkap dan jadwal disepakati.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -3426,37 +3522,37 @@
   <section class="section" id="alur-kerja">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Cara Pesan</span>
+        <span class="section-tag">CARA PEMESANAN</span>
         <h2 class="section-title">
-          Hanya 3 Langkah Mudah <span class="gradient-text">Sampai Landing Page Anda Online</span>
+          Tiga Langkah Menuju <span class="gradient-text">Website Siap Digunakan</span>
         </h2>
         <p class="section-subtitle">
-          Prosesnya sangat simpel dan tidak merepotkan. Anda tidak perlu mengerti urusan teknis, serahkan semuanya pada tim kami.
+          Dari konsultasi hingga penyerahan, setiap tahap dijelaskan agar Anda memahami proses dan hasil yang akan diterima.
         </p>
       </div>
 
       <div class="steps-grid">
         <div class="step-card">
           <div class="step-num-badge">1</div>
-          <h3 class="step-title">Ceritakan Usaha Anda</h3>
+          <h3 class="step-title">Konsultasi &amp; Kesepakatan</h3>
           <p class="step-desc">
-            Hubungi kami via WhatsApp, sampaikan nama usaha, jenis produk atau jasa yang ingin ditampilkan, serta foto yang Anda miliki.
+            Ceritakan kebutuhan usaha Anda. Solvia membantu menentukan lingkup pekerjaan, biaya, jadwal, dan ketentuan revisi untuk disepakati sebelum desain dikerjakan.
           </p>
         </div>
 
         <div class="step-card">
           <div class="step-num-badge">2</div>
-          <h3 class="step-title">Kami Buatkan Desainnya</h3>
+          <h3 class="step-title">Pengerjaan &amp; Peninjauan</h3>
           <p class="step-desc">
-            Tim kami menyusun tampilan halaman yang menarik, merapikan tulisan promosi, dan menghubungkan tombol pemesanan langsung ke WhatsApp Anda.
+            Setelah kesepakatan dan materi lengkap, Solvia mengerjakan website sesuai kebutuhan. Anda meninjau hasil dan menyampaikan revisi dalam lingkup yang disepakati.
           </p>
         </div>
 
         <div class="step-card">
           <div class="step-num-badge">3</div>
-          <h3 class="step-title">Landing Page Siap Pakai!</h3>
+          <h3 class="step-title">Pengujian &amp; Penyerahan</h3>
           <p class="step-desc">
-            Setelah Anda meninjau dan setuju, landing page langsung aktif di internet dan siap Anda sebarkan ke calon pembeli Anda!
+            Website diperiksa bersama, kemudian dipublikasikan sesuai kesepakatan. Anda menerima akses dan penjelasan penggunaan sesuai paket yang dipilih.
           </p>
         </div>
       </div>
@@ -3476,13 +3572,10 @@
             Keahlian IT, Pendekatan Personal <span class="gradient-text">untuk Usaha Anda.</span>
           </h2>
           <p class="about-text">
-            Solvia Web dirintis oleh praktisi IT dengan pengalaman bekerja di sektor perbankan swasta. Pengalaman dalam implementasi teknologi, dukungan operasional, dan koordinasi pekerjaan IT menjadi bekal untuk menjalankan setiap proyek secara terarah, teliti, dan bertanggung jawab.
+            Solvia Web dirintis oleh praktisi IT dengan pengalaman di sektor perbankan swasta. Latar belakang dalam implementasi teknologi, dukungan operasional, dan koordinasi pekerjaan IT menjadi bekal untuk menangani proyek secara terarah, teliti, dan bertanggung jawab.
           </p>
           <p class="about-text">
-            Kami memahami bahwa pemilik usaha membutuhkan website yang menarik sekaligus jelas manfaatnya. Karena itu, proses dimulai dengan mengenali usaha Anda: siapa pelanggannya, apa yang ditawarkan, dan bagaimana website dapat memudahkan mereka mengambil langkah berikutnya.
-          </p>
-          <p class="about-text">
-            Anda tidak harus memahami coding atau istilah teknis. Solvia membantu menjelaskan pilihan, menyepakati ruang lingkup pekerjaan, dan menyiapkan website sesuai kebutuhan. Anda tetap dilibatkan saat meninjau hasil, sehingga mengetahui apa yang dikerjakan dan apa yang akan diterima.
+            Kami membantu pemilik usaha menerjemahkan kebutuhan bisnis menjadi website yang jelas dan mudah digunakan. Anda tidak harus memahami istilah teknis: pilihan dijelaskan dengan sederhana, dan Anda dilibatkan saat meninjau hasil agar website sesuai dengan kebutuhan yang disepakati.
           </p>
           <div class="about-highlight-card">
             <div class="about-highlight-icon" aria-hidden="true">
@@ -3880,7 +3973,8 @@
               </svg>
               <div>
                 <strong>Jam Respon:</strong><br>
-                Setiap Hari: 08.00 - 21.00 WIB
+                Setiap Hari: 08.00–21.00 WIB<br>
+                <span class="footer-response-note">Pesan di luar jam tersebut akan ditanggapi pada jam layanan berikutnya.</span>
               </div>
             </div>
           </div>
