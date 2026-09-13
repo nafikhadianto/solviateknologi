@@ -1206,57 +1206,83 @@
     }
 
     /* ==========================================================================
-       SECTION: PAKET HARGA (JELAS, SIMPEL & BERSAHABAT)
+       SECTION: PAKET HARGA (SPOTLIGHT PAKET PRAKTIS)
        ========================================================================== --> */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
-      align-items: stretch;
-    }
-
-    .pricing-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
+    .package-spotlight-card {
+      background: linear-gradient(180deg, rgba(214, 181, 109, 0.08) 0%, rgba(15, 23, 42, 0.95) 100%);
+      border: 2px solid var(--gold-primary);
       border-radius: var(--radius-lg);
-      padding: 36px 26px;
-      display: flex;
-      flex-direction: column;
+      padding: 42px 40px;
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 36px;
+      align-items: center;
       position: relative;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(214, 181, 109, 0.12);
       transition: var(--transition);
     }
 
-    .pricing-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+    .package-spotlight-card:hover {
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.7), 0 0 45px rgba(214, 181, 109, 0.18);
     }
 
-    .pricing-card.featured {
-      border: 2px solid var(--gold-primary);
-      background: linear-gradient(180deg, rgba(214, 181, 109, 0.1) 0%, rgba(15, 23, 42, 0.95) 100%);
-      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(214, 181, 109, 0.15);
-      transform: scale(1.02);
-    }
-
-    .pricing-card.featured:hover {
-      transform: scale(1.02) translateY(-5px);
-    }
-
-    .pricing-badge-popular {
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
+    .package-spotlight-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       background: var(--gold-gradient);
       color: #060B14;
       font-size: 0.74rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      padding: 4px 16px;
+      padding: 5px 16px;
       border-radius: var(--radius-full);
-      box-shadow: 0 4px 15px rgba(214, 181, 109, 0.4);
-      white-space: nowrap;
+      box-shadow: 0 4px 15px rgba(214, 181, 109, 0.35);
+      margin-bottom: 16px;
+      align-self: flex-start;
+    }
+
+    .package-spotlight-left {
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid var(--border-color);
+      padding-right: 36px;
+    }
+
+    .package-spotlight-right {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .package-spotlight-features-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 4px;
+    }
+
+    /* Catatan Ringkas Portofolio */
+    .portfolio-disclaimer-note {
+      margin-top: 26px;
+      text-align: center;
+      padding: 12px 20px;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .portfolio-disclaimer-note p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.5;
     }
 
     .pricing-name {
@@ -1373,6 +1399,82 @@
       .pricing-terms-desc {
         font-size: 0.84rem;
         line-height: 1.6;
+      }
+    }
+
+    /* Panel Konsultasi Kebutuhan Khusus */
+    .custom-needs-panel {
+      margin-top: 20px;
+      background: rgba(15, 23, 42, 0.45);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 22px 28px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      transition: var(--transition);
+    }
+
+    .custom-needs-content {
+      flex: 1;
+    }
+
+    .custom-needs-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .custom-needs-icon {
+      width: 18px;
+      height: 18px;
+      color: var(--gold-primary);
+      flex-shrink: 0;
+    }
+
+    .custom-needs-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin: 0;
+    }
+
+    .custom-needs-desc {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin: 0 0 6px 0;
+    }
+
+    .custom-needs-subnote {
+      display: block;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: var(--text-dim);
+    }
+
+    .custom-needs-action {
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .custom-needs-panel {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 18px 20px;
+      }
+      .custom-needs-action {
+        width: 100%;
+      }
+      .custom-needs-action .btn {
+        width: 100%;
+        justify-content: center;
       }
     }
 
@@ -2149,8 +2251,8 @@
        LIGHT THEME COMPONENT OVERRIDES & TRANSITIONS
        ========================================================================== --> */
     /* Transition for Smooth Theme Switching */
-    body, .header, .portfolio-card, 
-    .feature-box, .pricing-card, .pricing-terms-box, .step-card, .calc-container, 
+    body, .header, .portfolio-card, .portfolio-disclaimer-note,
+    .feature-box, .package-spotlight-card, .pricing-card, .pricing-terms-box, .custom-needs-panel, .step-card, .calc-container, 
     .calc-radio-card, .calc-check-item, .calc-summary-card, 
     .faq-item, .cta-banner, .footer, .mobile-drawer, .logo-badge {
       transition: background-color 0.3s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
@@ -2409,18 +2511,35 @@
       border-color: transparent;
     }
 
-    /* 8. Pricing Section Typography */
-    [data-theme="light"] .pricing-card.featured {
-      background: linear-gradient(180deg, rgba(133, 88, 12, 0.05) 0%, #FFFFFF 100%);
+    /* 8. Pricing Section & Spotlight */
+    [data-theme="light"] .package-spotlight-card {
+      background: linear-gradient(180deg, rgba(133, 88, 12, 0.04) 0%, #FFFFFF 100%);
       border: 2px solid #85580C;
       box-shadow: 0 15px 35px rgba(133, 88, 12, 0.12), 0 4px 10px rgba(15, 23, 42, 0.04);
     }
 
-    [data-theme="light"] .pricing-badge-popular {
+    [data-theme="light"] .package-spotlight-badge {
       background: linear-gradient(135deg, #85580C 0%, #A06D0B 100%);
       color: #FFFFFF;
-      font-weight: 800;
       box-shadow: 0 4px 15px rgba(133, 88, 12, 0.3);
+    }
+
+    [data-theme="light"] .package-spotlight-left {
+      border-right-color: rgba(15, 23, 42, 0.1);
+    }
+
+    [data-theme="light"] .package-spotlight-features-title {
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .portfolio-disclaimer-note {
+      background: #FFFFFF;
+      border-color: rgba(15, 23, 42, 0.1);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    }
+
+    [data-theme="light"] .portfolio-disclaimer-note p {
+      color: #475569;
     }
 
     [data-theme="light"] .pricing-price.gold {
@@ -2451,6 +2570,28 @@
     }
 
     [data-theme="light"] .pricing-terms-icon {
+      color: #85580C;
+    }
+
+    [data-theme="light"] .custom-needs-panel {
+      background: #F8FAFC;
+      border-color: rgba(15, 23, 42, 0.1);
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+    }
+
+    [data-theme="light"] .custom-needs-title {
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .custom-needs-desc {
+      color: #475569;
+    }
+
+    [data-theme="light"] .custom-needs-subnote {
+      color: #64748B;
+    }
+
+    [data-theme="light"] .custom-needs-icon {
       color: #85580C;
     }
 
@@ -2754,7 +2895,7 @@
       .mobile-menu-btn {
         display: block;
       }
-      .portfolio-grid, .features-grid, .pricing-grid {
+      .portfolio-grid, .features-grid {
         grid-template-columns: repeat(2, 1fr);
       }
       .steps-grid {
@@ -2764,12 +2905,6 @@
       }
       .footer-grid {
         grid-template-columns: 1fr 1fr;
-      }
-      .pricing-card.featured {
-        transform: none;
-      }
-      .pricing-card.featured:hover {
-        transform: translateY(-5px);
       }
     }
 
@@ -2811,6 +2946,23 @@
       }
     }
 
+    @media (max-width: 840px) {
+      .package-spotlight-card {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 30px 22px;
+      }
+      .package-spotlight-left {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-right: 0;
+        padding-bottom: 24px;
+      }
+      [data-theme="light"] .package-spotlight-left {
+        border-bottom-color: rgba(15, 23, 42, 0.1);
+      }
+    }
+
     @media (max-width: 768px) {
       .logo-brand {
         font-size: 1.15rem;
@@ -2821,7 +2973,7 @@
       .showcase-grid, .calc-grid {
         grid-template-columns: 1fr;
       }
-      .portfolio-grid, .features-grid, .pricing-grid {
+      .portfolio-grid, .features-grid {
         grid-template-columns: 1fr;
       }
       .footer-grid {
@@ -2959,7 +3111,7 @@
         <li><a href="#beranda" class="mobile-nav-link">Beranda</a></li>
         <li><a href="#contoh" class="mobile-nav-link">Contoh Website</a></li>
         <li><a href="#keunggulan" class="mobile-nav-link">Keunggulan</a></li>
-        <li><a href="#paket" class="mobile-nav-link">Pilihan Paket</a></li>
+        <li><a href="#paket" class="mobile-nav-link">Paket Praktis</a></li>
         <li><a href="#alur-kerja" class="mobile-nav-link">Cara Pesan</a></li>
         <li><a href="#tentang-solvia" class="mobile-nav-link">Tentang Solvia Web</a></li>
         <li><a href="#faq" class="mobile-nav-link">Tanya Jawab (FAQ)</a></li>
@@ -3020,7 +3172,7 @@
           </h1>
 
           <p class="hero-desc">
-            Kami buatkan website yang menarik, rapi di HP, dan memudahkan pelanggan menghubungi Anda. Dari desain hingga siap online.
+            Mulai hadirkan usaha Anda secara online dengan landing page satu halaman yang rapi di HP dan memudahkan calon pelanggan menghubungi WhatsApp. Solvia membantu dari desain hingga siap online.
           </p>
 
           <div class="hero-price-badge">
@@ -3028,18 +3180,15 @@
               <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
               <line x1="7" y1="7" x2="7.01" y2="7"></line>
             </svg>
-            <span>Mulai Rp650.000</span>
+            <span>Paket Praktis Rp650.000</span>
           </div>
 
           <div class="hero-cta-group">
-            <a href="#contoh" class="btn btn-gold">
-              <span>Lihat Contoh Website</span>
+            <a href="#paket" class="btn btn-gold">
+              <span>Lihat Paket Praktis</span>
             </a>
-            <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20ingin%20konsultasi%20pembuatan%20website%20untuk%20usaha%20saya" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-              </svg>
-              <span>Konsultasi WhatsApp</span>
+            <a href="#contoh" class="btn btn-outline">
+              <span>Lihat Contoh Website</span>
             </a>
           </div>
 
@@ -3172,7 +3321,7 @@
                   <line x1="10" y1="14" x2="21" y2="3"></line>
                 </svg>
               </a>
-              <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20tertarik%20dan%20ingin%20dibuatkan%20desain%20landing%20page%20seperti%20Apotek%20Nadi%20Sehat%20(https%3A%2F%2Fnadisehat.my.id)." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp portfolio-wa-btn">
+              <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20tertarik%20dengan%20gaya%20desain%20Apotek%20Nadi%20Sehat.%20Apakah%20bisa%20disesuaikan%20dengan%20Paket%20Praktis%20Rp650.000%3F%20Jika%20ada%20kebutuhan%20tambahan%2C%20mohon%20dijelaskan%20terlebih%20dahulu." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp portfolio-wa-btn">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                 </svg>
@@ -3237,7 +3386,7 @@
                   <line x1="10" y1="14" x2="21" y2="3"></line>
                 </svg>
               </a>
-              <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20tertarik%20dan%20ingin%20dibuatkan%20desain%20landing%20page%20seperti%20Bharata%20Trans%20(https%3A%2F%2Fnafikhadianto.github.io%2Fbharatatrans%2F)." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp portfolio-wa-btn">
+              <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20tertarik%20dengan%20gaya%20desain%20Bharata%20Trans.%20Apakah%20bisa%20disesuaikan%20dengan%20Paket%20Praktis%20Rp650.000%3F%20Jika%20ada%20kebutuhan%20tambahan%2C%20mohon%20dijelaskan%20terlebih%20dahulu." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp portfolio-wa-btn">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                 </svg>
@@ -3302,7 +3451,7 @@
                   <line x1="10" y1="14" x2="21" y2="3"></line>
                 </svg>
               </a>
-              <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20tertarik%20dan%20ingin%20dibuatkan%20desain%20landing%20page%20seperti%20AIO%20IT%20Solution%20(https%3A%2F%2Fnafikhadianto.github.io%2FAIOSolution%2F)." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp portfolio-wa-btn">
+              <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20tertarik%20dengan%20gaya%20desain%20AIO%20IT%20Solution.%20Apakah%20bisa%20disesuaikan%20dengan%20Paket%20Praktis%20Rp650.000%3F%20Jika%20ada%20kebutuhan%20tambahan%2C%20mohon%20dijelaskan%20terlebih%20dahulu." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp portfolio-wa-btn">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                 </svg>
@@ -3311,6 +3460,11 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Catatan Ringkas Portofolio -->
+      <div class="portfolio-disclaimer-note">
+        <p>Portofolio menunjukkan contoh hasil desain. Fitur pada setiap contoh dapat berbeda dari cakupan Paket Praktis.</p>
       </div>
     </div>
   </section>
@@ -3381,7 +3535,7 @@
           </div>
           <h3 class="feature-title">Dibantu hingga Siap Online</h3>
           <p class="feature-desc">
-            Solvia membantu penataan konten, pengaturan domain dan hosting, serta pemeriksaan website hingga siap digunakan sesuai paket yang dipilih.
+            Solvia membantu penataan konten, pengaturan domain dan hosting, serta pemeriksaan website hingga siap digunakan sesuai lingkup Paket Praktis yang disepakati.
           </p>
         </div>
       </div>
@@ -3389,112 +3543,67 @@
   </section>
 
   <!-- ==========================================================================
-       SECTION: PILIHAN PAKET HARGA (SIMPEL, BERSAHABAT & JELAS)
+       SECTION: PILIHAN PAKET HARGA (SPOTLIGHT PAKET PRAKTIS)
        ========================================================================== -->
   <section class="section section-darker" id="paket">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Pilihan Paket</span>
+        <span class="section-tag">PAKET PRAKTIS</span>
         <h2 class="section-title">
-          Pilihan Paket Website &amp; Landing Page <span class="gradient-text">untuk Usaha Anda</span>
+          Satu Paket Praktis untuk <span class="gradient-text">Memulai Website Usaha Anda</span>
         </h2>
         <p class="section-subtitle">
-          Pilih paket sesuai kebutuhan usaha Anda. Fitur, biaya, dan lingkup pengerjaan dijelaskan sebelum pekerjaan dimulai.
+          Perkenalkan usaha Anda melalui landing page satu halaman dengan informasi yang jelas dan akses langsung ke WhatsApp.
         </p>
       </div>
 
-      <div class="pricing-grid">
-        <!-- Paket 1: Praktis -->
-        <div class="pricing-card">
-          <h3 class="pricing-name">Paket Praktis</h3>
-          <p class="pricing-desc">Pilihan hemat dan tepat untuk mulai memperkenalkan usaha atau produk Anda secara resmi di internet.</p>
-          <div class="pricing-price-wrap">
-            <div class="pricing-price">Rp 650.000</div>
-            <div class="pricing-note">Estimasi 2-3 hari kerja</div>
+      <!-- Spotlight 1 Penawaran Paket Praktis -->
+      <div class="package-spotlight-card">
+        <!-- Kolom Kiri: Ringkasan & Harga -->
+        <div class="package-spotlight-left">
+          <div class="package-spotlight-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            <span>PENAWARAN LENGKAP</span>
           </div>
-          <div class="pricing-features">
-            <div class="pricing-feature-item">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <span>Landing Page 1 halaman</span>
-            </div>
-            <div class="pricing-feature-item">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <span>Tampilan Responsif</span>
-            </div>
-            <div class="pricing-feature-item">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <span>Tombol WhatsApp</span>
-            </div>
-            <div class="pricing-feature-item">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <span>Domain &amp; Hosting Tahun Pertama</span>
-            </div>
+          <h3 class="pricing-name" style="font-size: 1.6rem; margin-bottom: 10px;">Paket Praktis</h3>
+          <p class="pricing-desc" style="margin-bottom: 24px; font-size: 0.92rem;">
+            Pilihan praktis untuk memperkenalkan usaha Anda melalui landing page satu halaman yang profesional dan mudah diakses.
+          </p>
+          <div class="pricing-price-wrap" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">
+            <div class="pricing-price gold" style="font-size: 2.5rem;">Rp 650.000</div>
+            <div class="pricing-note" style="font-size: 0.85rem; margin-top: 4px;">Estimasi 2–3 hari kerja</div>
           </div>
-          <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20tertarik%20dengan%20Paket%20Praktis%20(Rp%20650.000)." target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%;">
-            Konsultasikan Paket
-          </a>
         </div>
 
-        <!-- Paket 2: Populer (Featured) -->
-        <div class="pricing-card featured">
-          <span class="pricing-badge-popular">REKOMENDASI SOLVIA</span>
-          <h3 class="pricing-name">Paket Populer</h3>
-          <p class="pricing-desc">Cocok untuk usaha yang membutuhkan bantuan teks promosi dan penyajian informasi lebih lengkap.</p>
-          <div class="pricing-price-wrap">
-            <div class="pricing-price gold">Rp 1.250.000</div>
-            <div class="pricing-note">Estimasi 3-5 hari kerja</div>
-          </div>
-          <div class="pricing-features">
+        <!-- Kolom Kanan: Fasilitas Termasuk & Tombol Konsultasi -->
+        <div class="package-spotlight-right">
+          <h4 class="package-spotlight-features-title">Fasilitas Termasuk:</h4>
+          <div class="pricing-features" style="margin-bottom: 8px;">
             <div class="pricing-feature-item">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <span><strong>Seluruh Fitur Paket Praktis</strong></span>
+              <span>Landing page 1 halaman.</span>
             </div>
             <div class="pricing-feature-item">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <span>Bantuan Teks Promosi</span>
+              <span>Tampilan responsif di HP, tablet, dan komputer.</span>
             </div>
             <div class="pricing-feature-item">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <span>Bagian Testimoni Pelanggan</span>
+              <span>Tombol WhatsApp.</span>
             </div>
             <div class="pricing-feature-item">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <span>Panduan Pembaruan Konten</span>
+              <span>Domain dan hosting tahun pertama.</span>
             </div>
           </div>
-          <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20tertarik%20dengan%20Paket%20Populer%20(Rp%201.250.000)." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%;">
-            Konsultasikan Paket
-          </a>
-        </div>
 
-        <!-- Paket 3: Bisnis Eksklusif -->
-        <div class="pricing-card">
-          <h3 class="pricing-name">Paket Bisnis Eksklusif</h3>
-          <p class="pricing-desc">Cocok untuk perusahaan, brand berkembang, atau usaha dengan banyak kategori produk dan layanan khusus.</p>
-          <div class="pricing-price-wrap">
-            <div class="pricing-price">Rp 2.450.000</div>
-            <div class="pricing-note">Estimasi 5-8 hari kerja</div>
-          </div>
-          <div class="pricing-features">
-            <div class="pricing-feature-item">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <span><strong>Seluruh Fitur Paket Populer</strong></span>
-            </div>
-            <div class="pricing-feature-item">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <span>Halaman Tambahan Sesuai Lingkup</span>
-            </div>
-            <div class="pricing-feature-item">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <span>Formulir Sesuai Kebutuhan</span>
-            </div>
-            <div class="pricing-feature-item">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <span>Penyesuaian Desain Lanjutan</span>
-            </div>
-          </div>
-          <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20tertarik%20dengan%20Paket%20Bisnis%20Eksklusif%20(Rp%202.450.000)." target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%;">
-            Konsultasikan Paket
+          <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20tertarik%20dengan%20Paket%20Praktis%20Rp650.000%20untuk%20membuat%20landing%20page%20usaha%20saya.%20Mohon%20informasi%20proses%20dan%20ketentuannya." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%; justify-content: center; font-size: 1rem; padding: 14px 24px;">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="margin-right: 6px;">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            <span>Konsultasikan Paket Praktis</span>
           </a>
         </div>
       </div>
@@ -3510,8 +3619,31 @@
           <h4 class="pricing-terms-title">Ketentuan Paket</h4>
         </div>
         <p class="pricing-terms-desc">
-          Domain dan hosting termasuk untuk tahun pertama sesuai paket. Pilihan domain, biaya perpanjangan tahun berikutnya, batas revisi, dan ketentuan bantuan dijelaskan dalam penawaran sebelum pengerjaan. Estimasi dihitung dalam hari kerja setelah materi lengkap dan jadwal disepakati.
+          Domain dan hosting termasuk untuk tahun pertama sesuai penawaran. Pilihan domain, biaya perpanjangan tahun berikutnya, batas revisi, dan ketentuan bantuan dijelaskan sebelum pengerjaan. Estimasi 2–3 hari kerja dihitung setelah materi lengkap dan jadwal disepakati.
         </p>
+      </div>
+
+      <!-- Panel Konsultasi Kebutuhan Khusus -->
+      <div class="custom-needs-panel">
+        <div class="custom-needs-content">
+          <div class="custom-needs-header">
+            <svg class="custom-needs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <h4 class="custom-needs-title">Kebutuhan Anda Berbeda?</h4>
+          </div>
+          <p class="custom-needs-desc">
+            Butuh halaman tambahan atau fitur khusus? Ceritakan kebutuhan Anda. Solvia akan menilai kemungkinan pengerjaan dan menyiapkan penawaran terpisah sesuai lingkupnya.
+          </p>
+          <span class="custom-needs-subnote">
+            Kebutuhan tambahan tidak termasuk dalam harga Paket Praktis. Biaya dan jadwal dibahas sebelum pengerjaan.
+          </span>
+        </div>
+        <div class="custom-needs-action">
+          <a href="https://wa.me/628111011071?text=Halo%20Solvia%20Web%2C%20saya%20ingin%20mendiskusikan%20kebutuhan%20website%20di%20luar%20Paket%20Praktis.%20Jenis%20usaha%20saya%3A%20...%20Kebutuhan%20atau%20fitur%20yang%20saya%20inginkan%3A%20..." target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <span>Diskusikan Kebutuhan Saya</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -3536,7 +3668,7 @@
           <div class="step-num-badge">1</div>
           <h3 class="step-title">Konsultasi &amp; Kesepakatan</h3>
           <p class="step-desc">
-            Ceritakan kebutuhan usaha Anda. Solvia membantu menentukan lingkup pekerjaan, biaya, jadwal, dan ketentuan revisi untuk disepakati sebelum desain dikerjakan.
+            Ceritakan kebutuhan usaha Anda. Solvia membantu menilai kesesuaian Paket Praktis atau kebutuhan khusus, lalu menjelaskan lingkup pekerjaan, biaya, jadwal, dan ketentuan revisi sebelum pengerjaan.
           </p>
         </div>
 
@@ -3552,7 +3684,7 @@
           <div class="step-num-badge">3</div>
           <h3 class="step-title">Pengujian &amp; Penyerahan</h3>
           <p class="step-desc">
-            Website diperiksa bersama, kemudian dipublikasikan sesuai kesepakatan. Anda menerima akses dan penjelasan penggunaan sesuai paket yang dipilih.
+            Website diperiksa bersama, kemudian dipublikasikan sesuai kesepakatan. Anda menerima akses dan penjelasan penyerahan sesuai lingkup Paket Praktis yang disepakati.
           </p>
         </div>
       </div>
@@ -3653,7 +3785,7 @@
             <div class="trust-content">
               <h3 class="trust-title">Penyerahan yang Jelas</h3>
               <p class="trust-desc">
-                Penjelasan penggunaan, akses yang diserahkan, serta ketentuan bantuan dan perpanjangan dibahas sesuai paket.
+                Penjelasan akses yang diserahkan serta ketentuan bantuan dan perpanjangan dibahas sesuai lingkup Paket Praktis.
               </p>
             </div>
           </div>
@@ -3665,7 +3797,7 @@
         <div class="about-cta-content">
           <h3 class="about-cta-title">Mari Kenali Kebutuhan Website Anda.</h3>
           <p class="about-cta-desc">
-            Ceritakan usaha, rencana, dan anggaran Anda. Solvia membantu menentukan pilihan website yang sesuai.
+            Ceritakan usaha dan kebutuhan Anda. Solvia membantu mewujudkan website yang sesuai melalui Paket Praktis.
           </p>
         </div>
         <div class="about-cta-actions">
@@ -3722,137 +3854,227 @@
           </div>
         </div>
 
-        <!-- FAQ 2: Pengetahuan Coding / Teknis -->
+        <!-- FAQ 2: Cakupan Paket Praktis -->
         <div class="faq-item">
           <button type="button" class="faq-question" id="faq-btn-2" aria-expanded="false" aria-controls="faq-ans-2">
-            <span class="faq-q-text">Apakah saya harus mengerti soal coding atau teknis website?</span>
+            <span class="faq-q-text">Apa saja yang termasuk dalam Paket Praktis?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="faq-answer" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2">
             <p class="faq-ans-text">
-              Tidak perlu. Seluruh proses teknis mulai dari pendaftaran nama domain, penyiapan server hosting, perancangan desain tampilan responsif, hingga pengaturan tombol pesan WhatsApp kami tangani sepenuhnya sampai website siap digunakan.
+              Paket Praktis mencakup pembuatan landing page 1 halaman dengan desain yang rapi dan responsif di HP, tablet, maupun komputer. Paket ini sudah dilengkapi tombol WhatsApp untuk memudahkan calon pelanggan menghubungi Anda, serta domain dan hosting untuk tahun pertama.
             </p>
           </div>
         </div>
 
-        <!-- FAQ 3: Bantuan Teks Promosi -->
+        <!-- FAQ 3: Hanya Melayani Paket Praktis? -->
         <div class="faq-item">
           <button type="button" class="faq-question" id="faq-btn-3" aria-expanded="false" aria-controls="faq-ans-3">
-            <span class="faq-q-text">Bagaimana jika saya belum memiliki materi tulisan atau kata-kata promosi?</span>
+            <span class="faq-q-text">Apakah Solvia hanya melayani Paket Praktis?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="faq-answer" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3">
             <p class="faq-ans-text">
-              Bantuan teks promosi tersedia sesuai paket yang dipilih (termasuk pada Paket Populer dan Paket Bisnis Eksklusif). Anda cukup menceritakan poin produk atau jasa Anda, dan Solvia akan membantu menyusun kalimat penawaran yang rapi, menarik, serta mudah dipahami calon pembeli.
+              Paket Praktis adalah penawaran utama kami untuk kebutuhan landing page satu halaman yang cepat dan siap pakai. Jika Anda membutuhkan halaman tambahan atau fitur khusus, kami siap mendiskusikan kemungkinan pengerjaannya melalui penawaran tersendiri.
             </p>
           </div>
         </div>
 
-        <!-- FAQ 4: Domain dan Hosting yang Termasuk -->
+        <!-- FAQ 4: Kebutuhan Tambahan & Biaya Rp650.000 -->
         <div class="faq-item">
           <button type="button" class="faq-question" id="faq-btn-4" aria-expanded="false" aria-controls="faq-ans-4">
-            <span class="faq-q-text">Apakah biaya pembuatan sudah termasuk domain dan hosting?</span>
+            <span class="faq-q-text">Apakah kebutuhan tambahan sudah termasuk dalam harga Rp650.000?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="faq-answer" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4">
             <p class="faq-ans-text">
-              Ya, seluruh paket di Solvia Web sudah mencakup domain dan hosting untuk tahun pertama. Pilihan nama serta ekstensi domain mengikuti paket yang dipilih, ketersediaan nama domain, serta ketentuan dalam penawaran tertulis.
+              Tidak. Harga Rp650.000 berlaku khusus untuk cakupan Paket Praktis satu halaman. Kebutuhan di luar paket, seperti penambahan halaman atau fitur khusus, akan dihitung terpisah setelah kebutuhan Anda dipelajari.
             </p>
           </div>
         </div>
 
-        <!-- FAQ 5: Biaya Setelah Tahun Pertama -->
+        <!-- FAQ 5: Belum Tahu Kebutuhan Usaha -->
         <div class="faq-item">
           <button type="button" class="faq-question" id="faq-btn-5" aria-expanded="false" aria-controls="faq-ans-5">
-            <span class="faq-q-text">Apakah ada biaya setelah tahun pertama?</span>
+            <span class="faq-q-text">Bagaimana jika saya belum tahu apakah usaha saya cukup menggunakan Paket Praktis?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="faq-answer" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5">
             <p class="faq-ans-text">
-              Paket mencakup domain dan hosting untuk tahun pertama sesuai penawaran. Setelah periode tersebut, biaya perpanjangan mengikuti domain dan layanan hosting yang digunakan. Pilihan layanan, biaya perpanjangan, dan pekerjaan tambahan seperti pembaruan konten akan dijelaskan agar Anda mengetahui biaya yang perlu disiapkan.
+              Konsultasikan usaha Anda kepada kami. Kami akan membantu melihat apakah Paket Praktis sudah mencukupi tujuan promosi Anda atau usaha Anda membutuhkan penyesuaian lain.
             </p>
           </div>
         </div>
 
-        <!-- FAQ 6: Estimasi Waktu Pengerjaan -->
+        <!-- FAQ 6: Pengetahuan Coding / Teknis -->
         <div class="faq-item">
           <button type="button" class="faq-question" id="faq-btn-6" aria-expanded="false" aria-controls="faq-ans-6">
-            <span class="faq-q-text">Berapa lama estimasi waktu pengerjaan website?</span>
+            <span class="faq-q-text">Apakah saya harus mengerti soal coding atau teknis website?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="faq-answer" id="faq-ans-6" role="region" aria-labelledby="faq-btn-6">
             <p class="faq-ans-text">
-              Estimasi waktu pengerjaan diselaraskan dengan paket yang dipilih: 2–3 hari kerja untuk Paket Praktis, 3–5 hari kerja untuk Paket Populer, dan 5–8 hari kerja untuk Paket Bisnis Eksklusif. Waktu pengerjaan dihitung setelah seluruh data dan materi usaha Anda lengkap serta jadwal pengerjaan disepakati bersama.
+              Tidak perlu. Seluruh proses teknis mulai dari pendaftaran nama domain, pengaturan hosting, perancangan desain responsif, hingga pengaturan tombol pesan WhatsApp ditangani oleh Solvia hingga website siap online.
             </p>
           </div>
         </div>
 
-        <!-- FAQ 7: Batas Revisi -->
+        <!-- FAQ 7: Estimasi Waktu Pengerjaan -->
         <div class="faq-item">
           <button type="button" class="faq-question" id="faq-btn-7" aria-expanded="false" aria-controls="faq-ans-7">
-            <span class="faq-q-text">Berapa kali saya bisa meminta revisi?</span>
+            <span class="faq-q-text">Berapa lama estimasi waktu pengerjaannya?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="faq-answer" id="faq-ans-7" role="region" aria-labelledby="faq-btn-7">
             <p class="faq-ans-text">
-              Jumlah putaran revisi dan jenis perubahan yang termasuk akan dijelaskan dalam penawaran sebelum pengerjaan dimulai. Penambahan halaman, fitur, atau perubahan konsep di luar kesepakatan awal akan dibicarakan terlebih dahulu, termasuk pengaruhnya terhadap biaya dan waktu pengerjaan.
+              Estimasi waktu pengerjaan Paket Praktis adalah 2–3 hari kerja. Waktu pengerjaan dihitung setelah seluruh data dan materi usaha Anda lengkap serta jadwal pengerjaan disepakati bersama.
             </p>
           </div>
         </div>
 
-        <!-- FAQ 8: Kepemilikan Domain dan Akses -->
+        <!-- FAQ 8: Persiapan Data / Materi Usaha -->
         <div class="faq-item">
           <button type="button" class="faq-question" id="faq-btn-8" aria-expanded="false" aria-controls="faq-ans-8">
-            <span class="faq-q-text">Apakah domain dan akses website akan diserahkan kepada saya?</span>
+            <span class="faq-q-text">Apa yang perlu saya siapkan untuk memulai?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="faq-answer" id="faq-ans-8" role="region" aria-labelledby="faq-btn-8">
             <p class="faq-ans-text">
-              Pengaturan kepemilikan domain serta akses yang diserahkan akan dijelaskan dalam penawaran sebelum pengerjaan. Saat penyerahan, Anda menerima rincian akses sesuai kesepakatan, termasuk cara mengelola domain dan website serta ketentuan perpanjangannya.
+              Anda cukup menyiapkan informasi dasar usaha, seperti nama usaha, logo (jika ada), deskripsi produk atau jasa yang ditawarkan, foto pendukung, nomor WhatsApp tujuan, serta alamat atau kontak yang ingin ditampilkan di website.
             </p>
           </div>
         </div>
 
-        <!-- FAQ 9: Pembaruan Foto, Harga, dan Tulisan -->
+        <!-- FAQ 9: Bantuan Teks Promosi -->
         <div class="faq-item">
           <button type="button" class="faq-question" id="faq-btn-9" aria-expanded="false" aria-controls="faq-ans-9">
-            <span class="faq-q-text">Apakah saya bisa mengganti foto, harga, atau tulisan setelah website selesai?</span>
+            <span class="faq-q-text">Apakah penulisan teks promosi sudah termasuk?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="faq-answer" id="faq-ans-9" role="region" aria-labelledby="faq-btn-9">
             <p class="faq-ans-text">
-              Bisa. Cara pembaruan bergantung pada sistem dan paket yang dipilih. Website berbasis file dapat diperbarui dengan mengikuti panduan pengeditan, sedangkan panel admin hanya tersedia jika termasuk dalam penawaran. Jika ingin dibantu Solvia, cakupan pekerjaan dan biayanya dapat dikonsultasikan terlebih dahulu.
+              Paket Praktis berfokus pada penataan dan penyajian materi yang Anda berikan. Anda menyiapkan teks dan informasi dasar usaha Anda, dan Solvia membantu menatanya agar tersaji rapi, mudah dibaca, dan nyaman diakses oleh pengunjung.
             </p>
           </div>
         </div>
 
-        <!-- FAQ 10: Cara Menghubungi via WhatsApp -->
+        <!-- FAQ 10: Panel Admin -->
         <div class="faq-item">
           <button type="button" class="faq-question" id="faq-btn-10" aria-expanded="false" aria-controls="faq-ans-10">
-            <span class="faq-q-text">Bagaimana calon pelanggan menghubungi saya melalui website?</span>
+            <span class="faq-q-text">Apakah Paket Praktis memiliki panel admin untuk mengedit sendiri?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="faq-answer" id="faq-ans-10" role="region" aria-labelledby="faq-btn-10">
             <p class="faq-ans-text">
-              Website dilengkapi tombol yang mengarahkan pengunjung ke WhatsApp Anda. Saat diklik, pengunjung dapat membuka percakapan dengan teks pesan yang sudah disiapkan. Pengunjung tetap perlu menekan tombol Kirim untuk mengirimkan pesan. Nomor tujuan dan isi pesan disesuaikan dengan kebutuhan usaha Anda.
+              Paket Praktis dirancang sederhana tanpa panel admin agar biaya tetap terjangkau dan website ringan. Pembaruan materi setelah selesai dapat dibantu oleh Solvia atau dilakukan oleh teknisi yang Anda tunjuk. Jika usaha Anda memang memerlukan panel admin, sampaikan saat konsultasi untuk kami hitungkan sebagai kebutuhan khusus.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 11: Domain dan Hosting yang Termasuk -->
+        <div class="faq-item">
+          <button type="button" class="faq-question" id="faq-btn-11" aria-expanded="false" aria-controls="faq-ans-11">
+            <span class="faq-q-text">Apakah biaya pembuatan sudah termasuk domain dan hosting?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-11" role="region" aria-labelledby="faq-btn-11">
+            <p class="faq-ans-text">
+              Ya, biaya Paket Praktis Rp650.000 sudah termasuk domain dan hosting untuk tahun pertama. Pilihan nama serta ekstensi domain mengikuti ketersediaan dan ketentuan dalam penawaran sebelum pengerjaan.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 12: Biaya Setelah Tahun Pertama -->
+        <div class="faq-item">
+          <button type="button" class="faq-question" id="faq-btn-12" aria-expanded="false" aria-controls="faq-ans-12">
+            <span class="faq-q-text">Apakah ada biaya setelah tahun pertama?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-12" role="region" aria-labelledby="faq-btn-12">
+            <p class="faq-ans-text">
+              Ya. Domain dan hosting termasuk untuk tahun pertama. Setelah satu tahun, ada biaya perpanjangan tahunan agar website dan nama domain Anda tetap aktif. Besaran biaya perpanjangan dijelaskan dalam penawaran sebelum pengerjaan dimulai.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 13: Batas Revisi -->
+        <div class="faq-item">
+          <button type="button" class="faq-question" id="faq-btn-13" aria-expanded="false" aria-controls="faq-ans-13">
+            <span class="faq-q-text">Berapa kali saya bisa meminta revisi?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-13" role="region" aria-labelledby="faq-btn-13">
+            <p class="faq-ans-text">
+              Jumlah putaran revisi dan jenis perubahan yang termasuk dalam Paket Praktis akan dijelaskan dalam penawaran sebelum pengerjaan dimulai. Revisi difokuskan pada penyesuaian teks dan penataan konten sesuai materi awal yang disepakati.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 14: Kepemilikan Domain dan Akses -->
+        <div class="faq-item">
+          <button type="button" class="faq-question" id="faq-btn-14" aria-expanded="false" aria-controls="faq-ans-14">
+            <span class="faq-q-text">Apakah domain dan akses website akan diserahkan kepada saya?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-14" role="region" aria-labelledby="faq-btn-14">
+            <p class="faq-ans-text">
+              Ya, penjelasan mengenai kepemilikan domain dan rincian akses yang diserahkan akan disampaikan sesuai kesepakatan dalam lingkup Paket Praktis saat serah terima website dilakukan.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 15: Pembaruan Foto, Harga, dan Tulisan -->
+        <div class="faq-item">
+          <button type="button" class="faq-question" id="faq-btn-15" aria-expanded="false" aria-controls="faq-ans-15">
+            <span class="faq-q-text">Apakah foto, harga, atau tulisan bisa diperbarui setelah website selesai?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-15" role="region" aria-labelledby="faq-btn-15">
+            <p class="faq-ans-text">
+              Bisa. Jika di kemudian hari Anda ingin memperbarui foto, teks promosi, atau daftar harga produk/jasa, Anda dapat menghubungi Solvia untuk bantuan pembaruan konten dengan biaya yang disepakati bersama.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 16: Cara Menghubungi via WhatsApp -->
+        <div class="faq-item">
+          <button type="button" class="faq-question" id="faq-btn-16" aria-expanded="false" aria-controls="faq-ans-16">
+            <span class="faq-q-text">Bagaimana calon pelanggan menghubungi saya melalui website?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-16" role="region" aria-labelledby="faq-btn-16">
+            <p class="faq-ans-text">
+              Website dilengkapi tombol yang mengarahkan pengunjung langsung ke WhatsApp Anda. Saat tombol diklik, aplikasi WhatsApp pengunjung akan terbuka dengan teks pesan pembuka otomatis, memudahkan mereka untuk langsung bertanya atau memesan.
             </p>
           </div>
         </div>
@@ -3880,7 +4102,7 @@
             <span>Konsultasi via WhatsApp</span>
           </a>
           <a href="#paket" class="btn btn-outline" style="font-size: 1.05rem; padding: 15px 28px;">
-            <span>Lihat Pilihan Paket</span>
+            <span>Lihat Paket Praktis</span>
           </a>
         </div>
       </div>
@@ -3933,7 +4155,7 @@
             <li><a href="#beranda" class="footer-link">Beranda</a></li>
             <li><a href="#contoh" class="footer-link">Contoh Landing Page</a></li>
             <li><a href="#keunggulan" class="footer-link">Keunggulan Kami</a></li>
-            <li><a href="#paket" class="footer-link">Pilihan Paket Harga</a></li>
+            <li><a href="#paket" class="footer-link">Paket Praktis</a></li>
             <li><a href="#alur-kerja" class="footer-link">Cara Pesan</a></li>
             <li><a href="#tentang-solvia" class="footer-link">Tentang Solvia Web</a></li>
             <li><a href="#faq" class="footer-link">Tanya Jawab (FAQ)</a></li>
